@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gitsense/components/github_requests/repositories_query.dart';
 import 'package:gitsense/components/github_requests/user_query.dart';
 import 'package:gitsense/util/api_translation.dart';
+import 'package:gitsense/util/logging.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
 class TopRepositoryPage extends StatelessWidget {
@@ -41,7 +42,10 @@ class _TopRepositoryData extends StatelessWidget {
         // Handle erroneous data
         if (result.isNotLoading && result.hasException && result.data == null) {
           // Log out the exception as an error
-          print(result.exception);
+          logger.e(
+            result.exception.toString(),
+            stackTrace: result.exception?.originalStackTrace,
+          );
           return Center(child: Text(result.exception.toString()));
         }
         // If the data is still loading, do nothing
