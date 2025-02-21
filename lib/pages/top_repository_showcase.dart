@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gitsense/components/github_requests/repositories_query.dart';
 import 'package:gitsense/components/github_requests/user_query.dart';
-import 'package:gitsense/util/api_translation.dart';
+import 'package:gitsense/graphql/queries/top_repositories.graphql.dart';
 import 'package:gitsense/util/logging.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 
 class TopRepositoryPage extends StatelessWidget {
   const TopRepositoryPage({super.key});
@@ -11,11 +9,47 @@ class TopRepositoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _TopRepositoryData(
-        builder: (context, data) {
+      body: Query$TopRepositories$Widget(
+        options: Options$Query$TopRepositories(
+          variables: Variables$Query$TopRepositories(
+            authorId: context.userInfo.user!.id,
+            nRepositories: 3,
+          ),
+        ),
+        builder: (result, {fetchMore, refetch}) {
+          // If the data is loading, we give a loading screen
+          if (result.isLoading) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          // If the data is erroneous, we give an error message
+          if (result.isNotLoading && result.data == null) {
+            if (result.hasException) {
+              logger.e(
+                result.exception.toString(),
+                stackTrace: result.exception?.originalStackTrace,
+              );
+            }
+
+            return Center(child: Text('Oopsies, we did a problemo'));
+          }
+
+          // Pull out the list of repositories, using an empty list if we found none
+          final List<Query$TopRepositories$viewer$topRepositories$nodes?>
+          nodes = result.parsedData!.viewer.topRepositories.nodes ?? [];
+
+          // Filter out any null values or bad translations
+          final List<Query$TopRepositories$viewer$topRepositories$nodes> data =
+              nodes
+                  .where((element) => element != null)
+                  .map((element) => element!)
+                  .toList();
+
+          // Create the list of the cute little repo cards
           return ListView.builder(
             itemBuilder: (context, index) {
-              final repo = data[index];
+              final Query$TopRepositories$viewer$topRepositories$nodes repo =
+                  data[index];
               return RepositoryShowcase(data: repo);
             },
             itemCount: data.length,
@@ -26,66 +60,14 @@ class TopRepositoryPage extends StatelessWidget {
   }
 }
 
-class _TopRepositoryData extends StatelessWidget {
-  const _TopRepositoryData({required this.builder});
-
-  final Widget Function(BuildContext, List<Repository>) builder;
-
-  @override
-  Widget build(BuildContext context) {
-    return Query(
-      options: QueryOptions(
-        document: gql(topRepositoriesQuery),
-        variables: {"nRepositories": 3, "authorId": context.userInfo.user!.id},
-      ),
-      builder: (result, {fetchMore, refetch}) {
-        // Handle erroneous data
-        if (result.isNotLoading && result.hasException && result.data == null) {
-          // Log out the exception as an error
-          logger.e(
-            result.exception.toString(),
-            stackTrace: result.exception?.originalStackTrace,
-          );
-          return Center(child: Text(result.exception.toString()));
-        }
-        // If the data is still loading, do nothing
-        if (result.isLoading) {
-          return const Center(child: CircularProgressIndicator());
-        }
-
-        // IF the data is here, parse it out
-        bool dataExists = result.isNotLoading && result.data != null;
-        List<Repository> repositories = [];
-        if (!dataExists) {
-          return const Center(child: Text('No data found'));
-        } else {
-          // Pull the list of repositories out of the json
-          final List<dynamic> data =
-              result.data!['viewer']['topRepositories']['nodes'];
-
-          // Change the json into a list of repositories
-          repositories =
-              data
-                  .map<Repository>(
-                    (element) => Repository.fromJson(element as Json),
-                  )
-                  .toList();
-        }
-
-        // It should be okay to use the same context since we don't add anything to it
-        return builder(context, repositories);
-      },
-    );
-  }
-}
-
 class RepositoryShowcase extends StatelessWidget {
   const RepositoryShowcase({required this.data, super.key});
 
-  final Repository data;
+  final Query$TopRepositories$viewer$topRepositories$nodes data;
 
   @override
   Widget build(BuildContext context) {
+    // Breakpoint here
     return Card(
       child: Column(
         children: <Widget>[
@@ -94,12 +76,20 @@ class RepositoryShowcase extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: data.defaultBranch.authorCount.toString(),
+                  text: 'AuthorCount',
+                  // data
+                  //     .defaultBranchRef
+                  //     .target
+                  //     .data
+                  //     .defaultBranch
+                  //     .authorCount
+                  //     .toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(text: ' / '),
                 TextSpan(
-                  text: data.defaultBranch.totalCount.toString(),
+                  text: 'TBD',
+                  // text: data.defaultBranch.totalCount.toString(),
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -108,14 +98,5 @@ class RepositoryShowcase extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class EasyTopData extends StatelessWidget {
-  const EasyTopData({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Placeholder();
   }
 }
