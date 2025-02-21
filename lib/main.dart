@@ -6,31 +6,45 @@ import 'package:gitsense/pages/top_repository_showcase.dart';
 import 'package:gitsense/theme.dart';
 import 'package:gitsense/util/github_graphql.dart';
 import 'package:gitsense/components/bloc/user_notifier.dart';
+import 'package:gitsense/util/logging.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
+  logger.i('Running main function');
   await initHiveForFlutter();
   await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<MainApp> createState() => _MainAppState();
+}
+
+class _MainAppState extends State<MainApp> {
+  late GraphQLClient client;
+  late TextTheme textTheme;
+  late MaterialTheme theme;
+  late GoRouter router;
+
+  @override
+  void initState() {
+    super.initState();
+
     // Link to github
-    GraphQLClient client = connectToGithub();
+    client = connectToGithub();
 
     // Use with Google Fonts package to use downloadable fonts
-    TextTheme textTheme = createTextTheme(context, "Lora", "Ubuntu");
+    textTheme = createTextTheme(context, "Lora", "Ubuntu");
 
-    MaterialTheme theme = MaterialTheme(textTheme);
+    theme = MaterialTheme(textTheme);
 
     // Create the router for the pages we will want
-    final GoRouter router = GoRouter(
+    router = GoRouter(
       initialLocation: '/login',
       routes: [
         GoRoute(path: '/', builder: (context, state) => LandingPage()),
@@ -41,18 +55,25 @@ class MainApp extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Log out that we're starting
+    logger.i("Starting up GitSense");
 
     return ThemeProvider(
-      child: Builder(
-        builder: (context) {
-          final brightness = context.read<ThemeNotifier>()._brightness;
+      child: Consumer<ThemeNotifier>(
+        builder: (context, notifier, widget) {
+          // Pull the brightness out of the consumer
+          final brightness = notifier._brightness;
+          // Get the theme to show off in our cool app
           final currentTheme =
               brightness == Brightness.light ? theme.light() : theme.dark();
           return MaterialApp.router(
             title: 'GitSense',
             theme: currentTheme,
             routerConfig: router,
-
             builder:
                 (context, child) =>
                     GlobalProviders(client: client, child: child!),
@@ -120,17 +141,36 @@ class ThemeNotifier extends ChangeNotifier {
   }
 }
 
-class ThemeProvider extends StatelessWidget {
+class ThemeProvider extends StatefulWidget {
   const ThemeProvider({required this.child, super.key});
 
   final Widget child;
 
   @override
+  State<ThemeProvider> createState() => _ThemeProviderState();
+}
+
+class _ThemeProviderState extends State<ThemeProvider> {
+  late ThemeNotifier _themeNotifier;
+
+  @override
+  void initState() {
+    super.initState();
+    logger.i('New Theme Notifier.');
+    _themeNotifier = ThemeNotifier(Brightness.dark);
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final brightness = Brightness.dark;
     return ChangeNotifierProvider<ThemeNotifier>(
-      create: (context) => ThemeNotifier(brightness),
-      child: child,
+      create: (context) => _themeNotifier,
+      child: widget.child,
     );
+  }
+
+  @override
+  void dispose() {
+    _themeNotifier.dispose();
+    super.dispose();
   }
 }

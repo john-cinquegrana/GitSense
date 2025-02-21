@@ -7,6 +7,7 @@ final logger = Logger(
     lineLength: 100,
     colors: true,
     printEmojis: true,
+    excludeBox: {Level.info: true, Level.debug: true},
     dateTimeFormat: DateTimeFormat.onlyTimeAndSinceStart,
   ),
 );
