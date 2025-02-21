@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:gitsense/pages/landing.dart';
 import 'package:gitsense/pages/login.dart';
 import 'package:gitsense/pages/top_repository_showcase.dart';
@@ -11,6 +12,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   await initHiveForFlutter();
+  await dotenv.load(fileName: ".env");
   runApp(const MainApp());
 }
 
