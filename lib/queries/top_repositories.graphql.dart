@@ -1,24 +1,30 @@
+// GENERATED FILE
+// DO NOT MODIFY
+import 'dart:async';
+import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
+import 'package:graphql/client.dart' as graphql;
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 
-class Variables$Query$Viewer {
-  factory Variables$Query$Viewer({
+class Variables$Query$TopRepositories {
+  factory Variables$Query$TopRepositories({
     required String authorId,
     required int nRepositories,
   }) =>
-      Variables$Query$Viewer._({
+      Variables$Query$TopRepositories._({
         r'authorId': authorId,
         r'nRepositories': nRepositories,
       });
 
-  Variables$Query$Viewer._(this._$data);
+  Variables$Query$TopRepositories._(this._$data);
 
-  factory Variables$Query$Viewer.fromJson(Map<String, dynamic> data) {
+  factory Variables$Query$TopRepositories.fromJson(Map<String, dynamic> data) {
     final result$data = <String, dynamic>{};
     final l$authorId = data['authorId'];
     result$data['authorId'] = (l$authorId as String);
     final l$nRepositories = data['nRepositories'];
     result$data['nRepositories'] = (l$nRepositories as int);
-    return Variables$Query$Viewer._(result$data);
+    return Variables$Query$TopRepositories._(result$data);
   }
 
   Map<String, dynamic> _$data;
@@ -36,18 +42,19 @@ class Variables$Query$Viewer {
     return result$data;
   }
 
-  CopyWith$Variables$Query$Viewer<Variables$Query$Viewer> get copyWith =>
-      CopyWith$Variables$Query$Viewer(
-        this,
-        (i) => i,
-      );
+  CopyWith$Variables$Query$TopRepositories<Variables$Query$TopRepositories>
+      get copyWith => CopyWith$Variables$Query$TopRepositories(
+            this,
+            (i) => i,
+          );
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Variables$Query$Viewer || runtimeType != other.runtimeType) {
+    if (other is! Variables$Query$TopRepositories ||
+        runtimeType != other.runtimeType) {
       return false;
     }
     final l$authorId = authorId;
@@ -74,14 +81,14 @@ class Variables$Query$Viewer {
   }
 }
 
-abstract class CopyWith$Variables$Query$Viewer<TRes> {
-  factory CopyWith$Variables$Query$Viewer(
-    Variables$Query$Viewer instance,
-    TRes Function(Variables$Query$Viewer) then,
-  ) = _CopyWithImpl$Variables$Query$Viewer;
+abstract class CopyWith$Variables$Query$TopRepositories<TRes> {
+  factory CopyWith$Variables$Query$TopRepositories(
+    Variables$Query$TopRepositories instance,
+    TRes Function(Variables$Query$TopRepositories) then,
+  ) = _CopyWithImpl$Variables$Query$TopRepositories;
 
-  factory CopyWith$Variables$Query$Viewer.stub(TRes res) =
-      _CopyWithStubImpl$Variables$Query$Viewer;
+  factory CopyWith$Variables$Query$TopRepositories.stub(TRes res) =
+      _CopyWithStubImpl$Variables$Query$TopRepositories;
 
   TRes call({
     String? authorId,
@@ -89,16 +96,16 @@ abstract class CopyWith$Variables$Query$Viewer<TRes> {
   });
 }
 
-class _CopyWithImpl$Variables$Query$Viewer<TRes>
-    implements CopyWith$Variables$Query$Viewer<TRes> {
-  _CopyWithImpl$Variables$Query$Viewer(
+class _CopyWithImpl$Variables$Query$TopRepositories<TRes>
+    implements CopyWith$Variables$Query$TopRepositories<TRes> {
+  _CopyWithImpl$Variables$Query$TopRepositories(
     this._instance,
     this._then,
   );
 
-  final Variables$Query$Viewer _instance;
+  final Variables$Query$TopRepositories _instance;
 
-  final TRes Function(Variables$Query$Viewer) _then;
+  final TRes Function(Variables$Query$TopRepositories) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -106,7 +113,7 @@ class _CopyWithImpl$Variables$Query$Viewer<TRes>
     Object? authorId = _undefined,
     Object? nRepositories = _undefined,
   }) =>
-      _then(Variables$Query$Viewer._({
+      _then(Variables$Query$TopRepositories._({
         ..._instance._$data,
         if (authorId != _undefined && authorId != null)
           'authorId': (authorId as String),
@@ -115,9 +122,9 @@ class _CopyWithImpl$Variables$Query$Viewer<TRes>
       }));
 }
 
-class _CopyWithStubImpl$Variables$Query$Viewer<TRes>
-    implements CopyWith$Variables$Query$Viewer<TRes> {
-  _CopyWithStubImpl$Variables$Query$Viewer(this._res);
+class _CopyWithStubImpl$Variables$Query$TopRepositories<TRes>
+    implements CopyWith$Variables$Query$TopRepositories<TRes> {
+  _CopyWithStubImpl$Variables$Query$TopRepositories(this._res);
 
   TRes _res;
 
@@ -128,22 +135,23 @@ class _CopyWithStubImpl$Variables$Query$Viewer<TRes>
       _res;
 }
 
-class Query$Viewer {
-  Query$Viewer({
+class Query$TopRepositories {
+  Query$TopRepositories({
     required this.viewer,
     this.$__typename = 'Query',
   });
 
-  factory Query$Viewer.fromJson(Map<String, dynamic> json) {
+  factory Query$TopRepositories.fromJson(Map<String, dynamic> json) {
     final l$viewer = json['viewer'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer(
-      viewer: Query$Viewer$viewer.fromJson((l$viewer as Map<String, dynamic>)),
+    return Query$TopRepositories(
+      viewer: Query$TopRepositories$viewer.fromJson(
+          (l$viewer as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Viewer$viewer viewer;
+  final Query$TopRepositories$viewer viewer;
 
   final String $__typename;
 
@@ -171,7 +179,7 @@ class Query$Viewer {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer || runtimeType != other.runtimeType) {
+    if (other is! Query$TopRepositories || runtimeType != other.runtimeType) {
       return false;
     }
     final l$viewer = viewer;
@@ -188,37 +196,40 @@ class Query$Viewer {
   }
 }
 
-extension UtilityExtension$Query$Viewer on Query$Viewer {
-  CopyWith$Query$Viewer<Query$Viewer> get copyWith => CopyWith$Query$Viewer(
+extension UtilityExtension$Query$TopRepositories on Query$TopRepositories {
+  CopyWith$Query$TopRepositories<Query$TopRepositories> get copyWith =>
+      CopyWith$Query$TopRepositories(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$Viewer<TRes> {
-  factory CopyWith$Query$Viewer(
-    Query$Viewer instance,
-    TRes Function(Query$Viewer) then,
-  ) = _CopyWithImpl$Query$Viewer;
+abstract class CopyWith$Query$TopRepositories<TRes> {
+  factory CopyWith$Query$TopRepositories(
+    Query$TopRepositories instance,
+    TRes Function(Query$TopRepositories) then,
+  ) = _CopyWithImpl$Query$TopRepositories;
 
-  factory CopyWith$Query$Viewer.stub(TRes res) = _CopyWithStubImpl$Query$Viewer;
+  factory CopyWith$Query$TopRepositories.stub(TRes res) =
+      _CopyWithStubImpl$Query$TopRepositories;
 
   TRes call({
-    Query$Viewer$viewer? viewer,
+    Query$TopRepositories$viewer? viewer,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer<TRes> get viewer;
+  CopyWith$Query$TopRepositories$viewer<TRes> get viewer;
 }
 
-class _CopyWithImpl$Query$Viewer<TRes> implements CopyWith$Query$Viewer<TRes> {
-  _CopyWithImpl$Query$Viewer(
+class _CopyWithImpl$Query$TopRepositories<TRes>
+    implements CopyWith$Query$TopRepositories<TRes> {
+  _CopyWithImpl$Query$TopRepositories(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer _instance;
+  final Query$TopRepositories _instance;
 
-  final TRes Function(Query$Viewer) _then;
+  final TRes Function(Query$TopRepositories) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -226,41 +237,42 @@ class _CopyWithImpl$Query$Viewer<TRes> implements CopyWith$Query$Viewer<TRes> {
     Object? viewer = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer(
+      _then(Query$TopRepositories(
         viewer: viewer == _undefined || viewer == null
             ? _instance.viewer
-            : (viewer as Query$Viewer$viewer),
+            : (viewer as Query$TopRepositories$viewer),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer<TRes> get viewer {
+  CopyWith$Query$TopRepositories$viewer<TRes> get viewer {
     final local$viewer = _instance.viewer;
-    return CopyWith$Query$Viewer$viewer(local$viewer, (e) => call(viewer: e));
+    return CopyWith$Query$TopRepositories$viewer(
+        local$viewer, (e) => call(viewer: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer<TRes>
-    implements CopyWith$Query$Viewer<TRes> {
-  _CopyWithStubImpl$Query$Viewer(this._res);
+class _CopyWithStubImpl$Query$TopRepositories<TRes>
+    implements CopyWith$Query$TopRepositories<TRes> {
+  _CopyWithStubImpl$Query$TopRepositories(this._res);
 
   TRes _res;
 
   call({
-    Query$Viewer$viewer? viewer,
+    Query$TopRepositories$viewer? viewer,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer<TRes> get viewer =>
-      CopyWith$Query$Viewer$viewer.stub(_res);
+  CopyWith$Query$TopRepositories$viewer<TRes> get viewer =>
+      CopyWith$Query$TopRepositories$viewer.stub(_res);
 }
 
-const documentNodeQueryViewer = DocumentNode(definitions: [
+const documentNodeQueryTopRepositories = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
-    name: NameNode(value: 'Viewer'),
+    name: NameNode(value: 'TopRepositories'),
     variableDefinitions: [
       VariableDefinitionNode(
         variable: VariableNode(name: NameNode(value: 'authorId')),
@@ -529,24 +541,177 @@ const documentNodeQueryViewer = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$TopRepositories _parserFn$Query$TopRepositories(
+        Map<String, dynamic> data) =>
+    Query$TopRepositories.fromJson(data);
+typedef OnQueryComplete$Query$TopRepositories = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$TopRepositories?,
+);
 
-class Query$Viewer$viewer {
-  Query$Viewer$viewer({
+class Options$Query$TopRepositories
+    extends graphql.QueryOptions<Query$TopRepositories> {
+  Options$Query$TopRepositories({
+    String? operationName,
+    required Variables$Query$TopRepositories variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$TopRepositories? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$TopRepositories? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$TopRepositories(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryTopRepositories,
+          parserFn: _parserFn$Query$TopRepositories,
+        );
+
+  final OnQueryComplete$Query$TopRepositories? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$TopRepositories
+    extends graphql.WatchQueryOptions<Query$TopRepositories> {
+  WatchOptions$Query$TopRepositories({
+    String? operationName,
+    required Variables$Query$TopRepositories variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$TopRepositories? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryTopRepositories,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$TopRepositories,
+        );
+}
+
+class FetchMoreOptions$Query$TopRepositories extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$TopRepositories({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$TopRepositories variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQueryTopRepositories,
+        );
+}
+
+extension ClientExtension$Query$TopRepositories on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$TopRepositories>> query$TopRepositories(
+          Options$Query$TopRepositories options) async =>
+      await this.query(options);
+  graphql.ObservableQuery<Query$TopRepositories> watchQuery$TopRepositories(
+          WatchOptions$Query$TopRepositories options) =>
+      this.watchQuery(options);
+  void writeQuery$TopRepositories({
+    required Query$TopRepositories data,
+    required Variables$Query$TopRepositories variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQueryTopRepositories),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$TopRepositories? readQuery$TopRepositories({
+    required Variables$Query$TopRepositories variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQueryTopRepositories),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$TopRepositories.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$TopRepositories> useQuery$TopRepositories(
+        Options$Query$TopRepositories options) =>
+    graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$TopRepositories> useWatchQuery$TopRepositories(
+        WatchOptions$Query$TopRepositories options) =>
+    graphql_flutter.useWatchQuery(options);
+
+class Query$TopRepositories$Widget
+    extends graphql_flutter.Query<Query$TopRepositories> {
+  Query$TopRepositories$Widget({
+    widgets.Key? key,
+    required Options$Query$TopRepositories options,
+    required graphql_flutter.QueryBuilder<Query$TopRepositories> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
+
+class Query$TopRepositories$viewer {
+  Query$TopRepositories$viewer({
     required this.topRepositories,
     this.$__typename = 'User',
   });
 
-  factory Query$Viewer$viewer.fromJson(Map<String, dynamic> json) {
+  factory Query$TopRepositories$viewer.fromJson(Map<String, dynamic> json) {
     final l$topRepositories = json['topRepositories'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer(
-      topRepositories: Query$Viewer$viewer$topRepositories.fromJson(
+    return Query$TopRepositories$viewer(
+      topRepositories: Query$TopRepositories$viewer$topRepositories.fromJson(
           (l$topRepositories as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Viewer$viewer$topRepositories topRepositories;
+  final Query$TopRepositories$viewer$topRepositories topRepositories;
 
   final String $__typename;
 
@@ -574,7 +739,8 @@ class Query$Viewer$viewer {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer || runtimeType != other.runtimeType) {
+    if (other is! Query$TopRepositories$viewer ||
+        runtimeType != other.runtimeType) {
       return false;
     }
     final l$topRepositories = topRepositories;
@@ -591,40 +757,42 @@ class Query$Viewer$viewer {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer on Query$Viewer$viewer {
-  CopyWith$Query$Viewer$viewer<Query$Viewer$viewer> get copyWith =>
-      CopyWith$Query$Viewer$viewer(
-        this,
-        (i) => i,
-      );
+extension UtilityExtension$Query$TopRepositories$viewer
+    on Query$TopRepositories$viewer {
+  CopyWith$Query$TopRepositories$viewer<Query$TopRepositories$viewer>
+      get copyWith => CopyWith$Query$TopRepositories$viewer(
+            this,
+            (i) => i,
+          );
 }
 
-abstract class CopyWith$Query$Viewer$viewer<TRes> {
-  factory CopyWith$Query$Viewer$viewer(
-    Query$Viewer$viewer instance,
-    TRes Function(Query$Viewer$viewer) then,
-  ) = _CopyWithImpl$Query$Viewer$viewer;
+abstract class CopyWith$Query$TopRepositories$viewer<TRes> {
+  factory CopyWith$Query$TopRepositories$viewer(
+    Query$TopRepositories$viewer instance,
+    TRes Function(Query$TopRepositories$viewer) then,
+  ) = _CopyWithImpl$Query$TopRepositories$viewer;
 
-  factory CopyWith$Query$Viewer$viewer.stub(TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer;
+  factory CopyWith$Query$TopRepositories$viewer.stub(TRes res) =
+      _CopyWithStubImpl$Query$TopRepositories$viewer;
 
   TRes call({
-    Query$Viewer$viewer$topRepositories? topRepositories,
+    Query$TopRepositories$viewer$topRepositories? topRepositories,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer$topRepositories<TRes> get topRepositories;
+  CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
+      get topRepositories;
 }
 
-class _CopyWithImpl$Query$Viewer$viewer<TRes>
-    implements CopyWith$Query$Viewer$viewer<TRes> {
-  _CopyWithImpl$Query$Viewer$viewer(
+class _CopyWithImpl$Query$TopRepositories$viewer<TRes>
+    implements CopyWith$Query$TopRepositories$viewer<TRes> {
+  _CopyWithImpl$Query$TopRepositories$viewer(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer _instance;
+  final Query$TopRepositories$viewer _instance;
 
-  final TRes Function(Query$Viewer$viewer) _then;
+  final TRes Function(Query$TopRepositories$viewer) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -632,67 +800,69 @@ class _CopyWithImpl$Query$Viewer$viewer<TRes>
     Object? topRepositories = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer(
-        topRepositories:
-            topRepositories == _undefined || topRepositories == null
-                ? _instance.topRepositories
-                : (topRepositories as Query$Viewer$viewer$topRepositories),
+      _then(Query$TopRepositories$viewer(
+        topRepositories: topRepositories == _undefined ||
+                topRepositories == null
+            ? _instance.topRepositories
+            : (topRepositories as Query$TopRepositories$viewer$topRepositories),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer$topRepositories<TRes> get topRepositories {
+  CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
+      get topRepositories {
     final local$topRepositories = _instance.topRepositories;
-    return CopyWith$Query$Viewer$viewer$topRepositories(
+    return CopyWith$Query$TopRepositories$viewer$topRepositories(
         local$topRepositories, (e) => call(topRepositories: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer<TRes>
-    implements CopyWith$Query$Viewer$viewer<TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer(this._res);
+class _CopyWithStubImpl$Query$TopRepositories$viewer<TRes>
+    implements CopyWith$Query$TopRepositories$viewer<TRes> {
+  _CopyWithStubImpl$Query$TopRepositories$viewer(this._res);
 
   TRes _res;
 
   call({
-    Query$Viewer$viewer$topRepositories? topRepositories,
+    Query$TopRepositories$viewer$topRepositories? topRepositories,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer$topRepositories<TRes> get topRepositories =>
-      CopyWith$Query$Viewer$viewer$topRepositories.stub(_res);
+  CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
+      get topRepositories =>
+          CopyWith$Query$TopRepositories$viewer$topRepositories.stub(_res);
 }
 
-class Query$Viewer$viewer$topRepositories {
-  Query$Viewer$viewer$topRepositories({
+class Query$TopRepositories$viewer$topRepositories {
+  Query$TopRepositories$viewer$topRepositories({
     required this.pageInfo,
     this.nodes,
     this.$__typename = 'RepositoryConnection',
   });
 
-  factory Query$Viewer$viewer$topRepositories.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories.fromJson(
       Map<String, dynamic> json) {
     final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories(
-      pageInfo: Query$Viewer$viewer$topRepositories$pageInfo.fromJson(
+    return Query$TopRepositories$viewer$topRepositories(
+      pageInfo: Query$TopRepositories$viewer$topRepositories$pageInfo.fromJson(
           (l$pageInfo as Map<String, dynamic>)),
       nodes: (l$nodes as List<dynamic>?)
           ?.map((e) => e == null
               ? null
-              : Query$Viewer$viewer$topRepositories$nodes.fromJson(
+              : Query$TopRepositories$viewer$topRepositories$nodes.fromJson(
                   (e as Map<String, dynamic>)))
           .toList(),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Viewer$viewer$topRepositories$pageInfo pageInfo;
+  final Query$TopRepositories$viewer$topRepositories$pageInfo pageInfo;
 
-  final List<Query$Viewer$viewer$topRepositories$nodes?>? nodes;
+  final List<Query$TopRepositories$viewer$topRepositories$nodes?>? nodes;
 
   final String $__typename;
 
@@ -724,7 +894,7 @@ class Query$Viewer$viewer$topRepositories {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer$topRepositories ||
+    if (other is! Query$TopRepositories$viewer$topRepositories ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -758,49 +928,50 @@ class Query$Viewer$viewer$topRepositories {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories
-    on Query$Viewer$viewer$topRepositories {
-  CopyWith$Query$Viewer$viewer$topRepositories<
-          Query$Viewer$viewer$topRepositories>
-      get copyWith => CopyWith$Query$Viewer$viewer$topRepositories(
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories
+    on Query$TopRepositories$viewer$topRepositories {
+  CopyWith$Query$TopRepositories$viewer$topRepositories<
+          Query$TopRepositories$viewer$topRepositories>
+      get copyWith => CopyWith$Query$TopRepositories$viewer$topRepositories(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories<TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories(
-    Query$Viewer$viewer$topRepositories instance,
-    TRes Function(Query$Viewer$viewer$topRepositories) then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories;
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories<TRes> {
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories(
+    Query$TopRepositories$viewer$topRepositories instance,
+    TRes Function(Query$TopRepositories$viewer$topRepositories) then,
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories.stub(TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories;
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories.stub(TRes res) =
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories;
 
   TRes call({
-    Query$Viewer$viewer$topRepositories$pageInfo? pageInfo,
-    List<Query$Viewer$viewer$topRepositories$nodes?>? nodes,
+    Query$TopRepositories$viewer$topRepositories$pageInfo? pageInfo,
+    List<Query$TopRepositories$viewer$topRepositories$nodes?>? nodes,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> get pageInfo;
+  CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
+      get pageInfo;
   TRes nodes(
-      Iterable<Query$Viewer$viewer$topRepositories$nodes?>? Function(
+      Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
               Iterable<
-                  CopyWith$Query$Viewer$viewer$topRepositories$nodes<
-                      Query$Viewer$viewer$topRepositories$nodes>?>?)
+                  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+                      Query$TopRepositories$viewer$topRepositories$nodes>?>?)
           _fn);
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories<TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories(
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories<TRes>
+    implements CopyWith$Query$TopRepositories$viewer$topRepositories<TRes> {
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories _instance;
+  final Query$TopRepositories$viewer$topRepositories _instance;
 
-  final TRes Function(Query$Viewer$viewer$topRepositories) _then;
+  final TRes Function(Query$TopRepositories$viewer$topRepositories) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -809,71 +980,76 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories<TRes>
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer$topRepositories(
+      _then(Query$TopRepositories$viewer$topRepositories(
         pageInfo: pageInfo == _undefined || pageInfo == null
             ? _instance.pageInfo
-            : (pageInfo as Query$Viewer$viewer$topRepositories$pageInfo),
+            : (pageInfo
+                as Query$TopRepositories$viewer$topRepositories$pageInfo),
         nodes: nodes == _undefined
             ? _instance.nodes
-            : (nodes as List<Query$Viewer$viewer$topRepositories$nodes?>?),
+            : (nodes
+                as List<Query$TopRepositories$viewer$topRepositories$nodes?>?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> get pageInfo {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
+      get pageInfo {
     final local$pageInfo = _instance.pageInfo;
-    return CopyWith$Query$Viewer$viewer$topRepositories$pageInfo(
+    return CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
         local$pageInfo, (e) => call(pageInfo: e));
   }
 
   TRes nodes(
-          Iterable<Query$Viewer$viewer$topRepositories$nodes?>? Function(
+          Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
                   Iterable<
-                      CopyWith$Query$Viewer$viewer$topRepositories$nodes<
-                          Query$Viewer$viewer$topRepositories$nodes>?>?)
+                      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+                          Query$TopRepositories$viewer$topRepositories$nodes>?>?)
               _fn) =>
       call(
           nodes: _fn(_instance.nodes?.map((e) => e == null
               ? null
-              : CopyWith$Query$Viewer$viewer$topRepositories$nodes(
+              : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
                   e,
                   (i) => i,
                 )))?.toList());
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories<TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories(this._res);
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories<TRes>
+    implements CopyWith$Query$TopRepositories$viewer$topRepositories<TRes> {
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories(this._res);
 
   TRes _res;
 
   call({
-    Query$Viewer$viewer$topRepositories$pageInfo? pageInfo,
-    List<Query$Viewer$viewer$topRepositories$nodes?>? nodes,
+    Query$TopRepositories$viewer$topRepositories$pageInfo? pageInfo,
+    List<Query$TopRepositories$viewer$topRepositories$nodes?>? nodes,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> get pageInfo =>
-      CopyWith$Query$Viewer$viewer$topRepositories$pageInfo.stub(_res);
+  CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
+      get pageInfo =>
+          CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo.stub(
+              _res);
 
   nodes(_fn) => _res;
 }
 
-class Query$Viewer$viewer$topRepositories$pageInfo {
-  Query$Viewer$viewer$topRepositories$pageInfo({
+class Query$TopRepositories$viewer$topRepositories$pageInfo {
+  Query$TopRepositories$viewer$topRepositories$pageInfo({
     this.endCursor,
     required this.hasNextPage,
     this.$__typename = 'PageInfo',
   });
 
-  factory Query$Viewer$viewer$topRepositories$pageInfo.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$pageInfo.fromJson(
       Map<String, dynamic> json) {
     final l$endCursor = json['endCursor'];
     final l$hasNextPage = json['hasNextPage'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$pageInfo(
+    return Query$TopRepositories$viewer$topRepositories$pageInfo(
       endCursor: (l$endCursor as String?),
       hasNextPage: (l$hasNextPage as bool),
       $__typename: (l$$__typename as String),
@@ -914,7 +1090,7 @@ class Query$Viewer$viewer$topRepositories$pageInfo {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer$topRepositories$pageInfo ||
+    if (other is! Query$TopRepositories$viewer$topRepositories$pageInfo ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -937,24 +1113,27 @@ class Query$Viewer$viewer$topRepositories$pageInfo {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$pageInfo
-    on Query$Viewer$viewer$topRepositories$pageInfo {
-  CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<
-          Query$Viewer$viewer$topRepositories$pageInfo>
-      get copyWith => CopyWith$Query$Viewer$viewer$topRepositories$pageInfo(
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$pageInfo
+    on Query$TopRepositories$viewer$topRepositories$pageInfo {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<
+          Query$TopRepositories$viewer$topRepositories$pageInfo>
+      get copyWith =>
+          CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$pageInfo(
-    Query$Viewer$viewer$topRepositories$pageInfo instance,
-    TRes Function(Query$Viewer$viewer$topRepositories$pageInfo) then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$pageInfo;
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<
+    TRes> {
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
+    Query$TopRepositories$viewer$topRepositories$pageInfo instance,
+    TRes Function(Query$TopRepositories$viewer$topRepositories$pageInfo) then,
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$pageInfo.stub(TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$pageInfo;
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo.stub(
+          TRes res) =
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo;
 
   TRes call({
     String? endCursor,
@@ -963,16 +1142,18 @@ abstract class CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> {
   });
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$pageInfo<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$pageInfo(
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
+    implements
+        CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes> {
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$pageInfo _instance;
+  final Query$TopRepositories$viewer$topRepositories$pageInfo _instance;
 
-  final TRes Function(Query$Viewer$viewer$topRepositories$pageInfo) _then;
+  final TRes Function(Query$TopRepositories$viewer$topRepositories$pageInfo)
+      _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -981,7 +1162,7 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$pageInfo<TRes>
     Object? hasNextPage = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer$topRepositories$pageInfo(
+      _then(Query$TopRepositories$viewer$topRepositories$pageInfo(
         endCursor: endCursor == _undefined
             ? _instance.endCursor
             : (endCursor as String?),
@@ -994,9 +1175,12 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$pageInfo<TRes>
       ));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$pageInfo<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories$pageInfo<TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$pageInfo(this._res);
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<
+        TRes>
+    implements
+        CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes> {
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo(
+      this._res);
 
   TRes _res;
 
@@ -1008,8 +1192,8 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$pageInfo<TRes>
       _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes {
-  Query$Viewer$viewer$topRepositories$nodes({
+class Query$TopRepositories$viewer$topRepositories$nodes {
+  Query$TopRepositories$viewer$topRepositories$nodes({
     required this.name,
     required this.url,
     this.description,
@@ -1019,7 +1203,7 @@ class Query$Viewer$viewer$topRepositories$nodes {
     this.$__typename = 'Repository',
   });
 
-  factory Query$Viewer$viewer$topRepositories$nodes.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes.fromJson(
       Map<String, dynamic> json) {
     final l$name = json['name'];
     final l$url = json['url'];
@@ -1028,7 +1212,7 @@ class Query$Viewer$viewer$topRepositories$nodes {
     final l$id = json['id'];
     final l$defaultBranchRef = json['defaultBranchRef'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes(
+    return Query$TopRepositories$viewer$topRepositories$nodes(
       name: (l$name as String),
       url: (l$url as String),
       description: (l$description as String?),
@@ -1036,8 +1220,8 @@ class Query$Viewer$viewer$topRepositories$nodes {
       id: (l$id as String),
       defaultBranchRef: l$defaultBranchRef == null
           ? null
-          : Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef.fromJson(
-              (l$defaultBranchRef as Map<String, dynamic>)),
+          : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
+              .fromJson((l$defaultBranchRef as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1052,7 +1236,7 @@ class Query$Viewer$viewer$topRepositories$nodes {
 
   final String id;
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef?
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
       defaultBranchRef;
 
   final String $__typename;
@@ -1101,7 +1285,7 @@ class Query$Viewer$viewer$topRepositories$nodes {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer$topRepositories$nodes ||
+    if (other is! Query$TopRepositories$viewer$topRepositories$nodes ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1144,24 +1328,27 @@ class Query$Viewer$viewer$topRepositories$nodes {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes
-    on Query$Viewer$viewer$topRepositories$nodes {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes<
-          Query$Viewer$viewer$topRepositories$nodes>
-      get copyWith => CopyWith$Query$Viewer$viewer$topRepositories$nodes(
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes
+    on Query$TopRepositories$viewer$topRepositories$nodes {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+          Query$TopRepositories$viewer$topRepositories$nodes>
+      get copyWith =>
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes<TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes(
-    Query$Viewer$viewer$topRepositories$nodes instance,
-    TRes Function(Query$Viewer$viewer$topRepositories$nodes) then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes;
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+    TRes> {
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
+    Query$TopRepositories$viewer$topRepositories$nodes instance,
+    TRes Function(Query$TopRepositories$viewer$topRepositories$nodes) then,
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes.stub(TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes;
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes.stub(
+          TRes res) =
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes;
 
   TRes call({
     String? name,
@@ -1169,24 +1356,25 @@ abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes<TRes> {
     String? description,
     String? homepageUrl,
     String? id,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
         defaultBranchRef,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<TRes>
-      get defaultBranchRef;
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
+      TRes> get defaultBranchRef;
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories$nodes<TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes(
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
+    implements
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<TRes> {
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes _instance;
+  final Query$TopRepositories$viewer$topRepositories$nodes _instance;
 
-  final TRes Function(Query$Viewer$viewer$topRepositories$nodes) _then;
+  final TRes Function(Query$TopRepositories$viewer$topRepositories$nodes) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1199,7 +1387,7 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes<TRes>
     Object? defaultBranchRef = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer$topRepositories$nodes(
+      _then(Query$TopRepositories$viewer$topRepositories$nodes(
         name: name == _undefined || name == null
             ? _instance.name
             : (name as String),
@@ -1214,26 +1402,28 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes<TRes>
         defaultBranchRef: defaultBranchRef == _undefined
             ? _instance.defaultBranchRef
             : (defaultBranchRef
-                as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef?),
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<TRes>
-      get defaultBranchRef {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
+      TRes> get defaultBranchRef {
     final local$defaultBranchRef = _instance.defaultBranchRef;
     return local$defaultBranchRef == null
-        ? CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef
+        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
             .stub(_then(_instance))
-        : CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+        : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
             local$defaultBranchRef, (e) => call(defaultBranchRef: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes<TRes>
-    implements CopyWith$Query$Viewer$viewer$topRepositories$nodes<TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes(this._res);
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
+    implements
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<TRes> {
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes(
+      this._res);
 
   TRes _res;
 
@@ -1243,35 +1433,36 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes<TRes>
     String? description,
     String? homepageUrl,
     String? id,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
         defaultBranchRef,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<TRes>
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
+          TRes>
       get defaultBranchRef =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
               .stub(_res);
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef({
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef({
     required this.name,
     this.target,
     this.$__typename = 'Ref',
   });
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.fromJson(
       Map<String, dynamic> json) {
     final l$name = json['name'];
     final l$target = json['target'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
       name: (l$name as String),
       target: l$target == null
           ? null
-          : Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target
+          : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
               .fromJson((l$target as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
@@ -1279,7 +1470,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef {
 
   final String name;
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target?
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
       target;
 
   final String $__typename;
@@ -1312,7 +1503,8 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef ||
+    if (other
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1335,52 +1527,57 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef instance,
-    TRes Function(Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef)
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
+        instance,
+    TRes Function(
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef;
 
   TRes call({
     String? name,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target? target,
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
+        target,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
       TRes> get target;
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef _instance;
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
+      _instance;
 
   final TRes Function(
-      Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef) _then;
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef)
+      _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1389,80 +1586,81 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
     Object? target = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+      _then(Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
         name: name == _undefined || name == null
             ? _instance.name
             : (name as String),
         target: target == _undefined
             ? _instance.target
             : (target
-                as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target?),
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
       TRes> get target {
     final local$target = _instance.target;
     return local$target == null
-        ? CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target
+        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
             .stub(_then(_instance))
-        : CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+        : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
             local$target, (e) => call(target: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
       this._res);
 
   TRes _res;
 
   call({
     String? name,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target? target,
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
+        target,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
           TRes>
       get target =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
               .stub(_res);
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
       {required this.$__typename});
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.fromJson(
       Map<String, dynamic> json) {
     switch (json["__typename"] as String) {
       case "Commit":
-        return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
             .fromJson(json);
 
       case "Blob":
-        return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
             .fromJson(json);
 
       case "Tag":
-        return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
             .fromJson(json);
 
       case "Tree":
-        return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
             .fromJson(json);
 
       default:
         final l$$__typename = json['__typename'];
-        return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
             $__typename: (l$$__typename as String));
     }
   }
@@ -1488,7 +1686,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1501,46 +1699,46 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
             this,
             (i) => i,
           );
   _T when<_T>({
     required _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
         commit,
     required _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
         blob,
     required _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
         tag,
     required _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
         tree,
     required _T Function() orElse,
   }) {
     switch ($__typename) {
       case "Commit":
         return commit(this
-            as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
+            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
 
       case "Blob":
         return blob(this
-            as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
+            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
 
       case "Tag":
         return tag(this
-            as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
+            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
 
       case "Tree":
         return tree(this
-            as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
+            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
 
       default:
         return orElse();
@@ -1549,16 +1747,16 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
 
   _T maybeWhen<_T>({
     _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)?
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)?
         commit,
     _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)?
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)?
         blob,
     _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)?
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)?
         tag,
     _T Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)?
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)?
         tree,
     required _T Function() orElse,
   }) {
@@ -1566,7 +1764,7 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
       case "Commit":
         if (commit != null) {
           return commit(this
-              as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
         } else {
           return orElse();
         }
@@ -1574,7 +1772,7 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
       case "Blob":
         if (blob != null) {
           return blob(this
-              as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
         } else {
           return orElse();
         }
@@ -1582,7 +1780,7 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
       case "Tag":
         if (tag != null) {
           return tag(this
-              as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
         } else {
           return orElse();
         }
@@ -1590,7 +1788,7 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
       case "Tree":
         if (tree != null) {
           return tree(this
-              as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
         } else {
           return orElse();
         }
@@ -1601,53 +1799,55 @@ extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBran
   }
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target instance,
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
+        instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target;
 
   TRes call({String? $__typename});
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
       _instance;
 
   final TRes Function(
-      Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target) _then;
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target)
+      _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({Object? $__typename = _undefined}) =>
-      _then(Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+  TRes call({Object? $__typename = _undefined}) => _then(
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
           $__typename: $__typename == _undefined || $__typename == null
               ? _instance.$__typename
               : ($__typename as String)));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
       this._res);
 
   TRes _res;
@@ -1655,35 +1855,35 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
   call({String? $__typename}) => _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
     implements
-        Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit({
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit({
     required this.authorCount,
     required this.totalCount,
     this.$__typename = 'Commit',
   });
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.fromJson(
       Map<String, dynamic> json) {
     final l$authorCount = json['authorCount'];
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
       authorCount:
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
               .fromJson((l$authorCount as Map<String, dynamic>)),
       totalCount:
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
               .fromJson((l$totalCount as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
       authorCount;
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
       totalCount;
 
   final String $__typename;
@@ -1717,7 +1917,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1740,59 +1940,59 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
 
   TRes call({
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
         authorCount,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
         totalCount,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
       TRes> get authorCount;
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
       TRes> get totalCount;
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
@@ -1803,78 +2003,78 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$t
     Object? $__typename = _undefined,
   }) =>
       _then(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
         authorCount: authorCount == _undefined || authorCount == null
             ? _instance.authorCount
             : (authorCount
-                as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount),
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount),
         totalCount: totalCount == _undefined || totalCount == null
             ? _instance.totalCount
             : (totalCount
-                as Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount),
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
       TRes> get authorCount {
     final local$authorCount = _instance.authorCount;
-    return CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+    return CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
         local$authorCount, (e) => call(authorCount: e));
   }
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
       TRes> get totalCount {
     final local$totalCount = _instance.totalCount;
-    return CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+    return CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
         local$totalCount, (e) => call(totalCount: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
       this._res);
 
   TRes _res;
 
   call({
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
         authorCount,
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
         totalCount,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
           TRes>
       get authorCount =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
               .stub(_res);
 
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
           TRes>
       get totalCount =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
               .stub(_res);
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount({
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount({
     required this.totalCount,
     this.$__typename = 'CommitHistoryConnection',
   });
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.fromJson(
       Map<String, dynamic> json) {
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
       totalCount: (l$totalCount as int),
       $__typename: (l$$__typename as String),
     );
@@ -1909,7 +2109,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -1927,30 +2127,30 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
 
   TRes call({
     int? totalCount,
@@ -1958,21 +2158,21 @@ abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
   });
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
@@ -1982,7 +2182,7 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$t
     Object? $__typename = _undefined,
   }) =>
       _then(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
         totalCount: totalCount == _undefined || totalCount == null
             ? _instance.totalCount
             : (totalCount as int),
@@ -1992,12 +2192,12 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$t
       ));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
       this._res);
 
   TRes _res;
@@ -2009,17 +2209,17 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
       _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount({
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount({
     required this.totalCount,
     this.$__typename = 'CommitHistoryConnection',
   });
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.fromJson(
       Map<String, dynamic> json) {
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
       totalCount: (l$totalCount as int),
       $__typename: (l$$__typename as String),
     );
@@ -2054,7 +2254,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2072,30 +2272,30 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
 
   TRes call({
     int? totalCount,
@@ -2103,21 +2303,21 @@ abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
   });
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
@@ -2127,7 +2327,7 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$t
     Object? $__typename = _undefined,
   }) =>
       _then(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
         totalCount: totalCount == _undefined || totalCount == null
             ? _instance.totalCount
             : (totalCount as int),
@@ -2137,12 +2337,12 @@ class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$t
       ));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
       this._res);
 
   TRes _res;
@@ -2154,16 +2354,16 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
       _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
     implements
-        Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
       {this.$__typename = 'Blob'});
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.fromJson(
       Map<String, dynamic> json) {
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
         $__typename: (l$$__typename as String));
   }
 
@@ -2188,7 +2388,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2201,66 +2401,66 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
 
   TRes call({String? $__typename});
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
           $__typename: $__typename == _undefined || $__typename == null
               ? _instance.$__typename
               : ($__typename as String)));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
       this._res);
 
   TRes _res;
@@ -2268,16 +2468,16 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
   call({String? $__typename}) => _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
     implements
-        Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
       {this.$__typename = 'Tag'});
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.fromJson(
       Map<String, dynamic> json) {
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
         $__typename: (l$$__typename as String));
   }
 
@@ -2302,7 +2502,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2315,66 +2515,66 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
 
   TRes call({String? $__typename});
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
           $__typename: $__typename == _undefined || $__typename == null
               ? _instance.$__typename
               : ($__typename as String)));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
       this._res);
 
   TRes _res;
@@ -2382,16 +2582,16 @@ class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchR
   call({String? $__typename}) => _res;
 }
 
-class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
     implements
-        Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
       {this.$__typename = 'Tree'});
 
-  factory Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.fromJson(
+  factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.fromJson(
       Map<String, dynamic> json) {
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+    return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
         $__typename: (l$$__typename as String));
   }
 
@@ -2416,7 +2616,7 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
       return true;
     }
     if (other
-            is! Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree ||
+            is! Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree ||
         runtimeType != other.runtimeType) {
       return false;
     }
@@ -2429,66 +2629,66 @@ class Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
-    on Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree {
-  CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree>
+extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree {
+  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree>
       get copyWith =>
-          CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
             this,
             (i) => i,
           );
 }
 
-abstract class CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
     TRes> {
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-    Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
         instance,
     TRes Function(
-            Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
+            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
         then,
-  ) = _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
+  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
 
-  factory CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.stub(
+  factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.stub(
           TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
+      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
 
   TRes call({String? $__typename});
 }
 
-class _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
             TRes> {
-  _CopyWithImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+  _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+  final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
       _instance;
 
   final TRes Function(
-          Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
       _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
           $__typename: $__typename == _undefined || $__typename == null
               ? _instance.$__typename
               : ($__typename as String)));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
         TRes>
     implements
-        CopyWith$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
             TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+  _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
       this._res);
 
   TRes _res;

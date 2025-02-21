@@ -1,0 +1,17 @@
+# Filename: c:\Users\inver\OneDrive\Documents\Programming\GitSense\gitsense\build.yaml
+# Path: c:\Users\inver\OneDrive\Documents\Programming\GitSense\gitsense
+# Created Date: Friday, February 21st 2025, 10:26:52 am
+# Author: John Cinquegrana
+# 
+# The build file holds configuration settings for the build_runner package and
+# changes the way the code is generated.
+# 
+
+targets:
+  $default:
+    builders:
+      graphql_codegen:
+        options:
+          generatedFileHeader: "// GENERATED FILE\n// DO NOT MODIFY\n"
+          clients:
+            - graphql_flutter

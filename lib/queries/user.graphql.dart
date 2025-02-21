@@ -1,21 +1,27 @@
+// GENERATED FILE
+// DO NOT MODIFY
+import 'dart:async';
+import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
+import 'package:graphql/client.dart' as graphql;
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 
-class Query$Viewer {
-  Query$Viewer({
+class Query$User {
+  Query$User({
     required this.viewer,
     this.$__typename = 'Query',
   });
 
-  factory Query$Viewer.fromJson(Map<String, dynamic> json) {
+  factory Query$User.fromJson(Map<String, dynamic> json) {
     final l$viewer = json['viewer'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer(
-      viewer: Query$Viewer$viewer.fromJson((l$viewer as Map<String, dynamic>)),
+    return Query$User(
+      viewer: Query$User$viewer.fromJson((l$viewer as Map<String, dynamic>)),
       $__typename: (l$$__typename as String),
     );
   }
 
-  final Query$Viewer$viewer viewer;
+  final Query$User$viewer viewer;
 
   final String $__typename;
 
@@ -43,7 +49,7 @@ class Query$Viewer {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer || runtimeType != other.runtimeType) {
+    if (other is! Query$User || runtimeType != other.runtimeType) {
       return false;
     }
     final l$viewer = viewer;
@@ -60,37 +66,37 @@ class Query$Viewer {
   }
 }
 
-extension UtilityExtension$Query$Viewer on Query$Viewer {
-  CopyWith$Query$Viewer<Query$Viewer> get copyWith => CopyWith$Query$Viewer(
+extension UtilityExtension$Query$User on Query$User {
+  CopyWith$Query$User<Query$User> get copyWith => CopyWith$Query$User(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$Viewer<TRes> {
-  factory CopyWith$Query$Viewer(
-    Query$Viewer instance,
-    TRes Function(Query$Viewer) then,
-  ) = _CopyWithImpl$Query$Viewer;
+abstract class CopyWith$Query$User<TRes> {
+  factory CopyWith$Query$User(
+    Query$User instance,
+    TRes Function(Query$User) then,
+  ) = _CopyWithImpl$Query$User;
 
-  factory CopyWith$Query$Viewer.stub(TRes res) = _CopyWithStubImpl$Query$Viewer;
+  factory CopyWith$Query$User.stub(TRes res) = _CopyWithStubImpl$Query$User;
 
   TRes call({
-    Query$Viewer$viewer? viewer,
+    Query$User$viewer? viewer,
     String? $__typename,
   });
-  CopyWith$Query$Viewer$viewer<TRes> get viewer;
+  CopyWith$Query$User$viewer<TRes> get viewer;
 }
 
-class _CopyWithImpl$Query$Viewer<TRes> implements CopyWith$Query$Viewer<TRes> {
-  _CopyWithImpl$Query$Viewer(
+class _CopyWithImpl$Query$User<TRes> implements CopyWith$Query$User<TRes> {
+  _CopyWithImpl$Query$User(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer _instance;
+  final Query$User _instance;
 
-  final TRes Function(Query$Viewer) _then;
+  final TRes Function(Query$User) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -98,41 +104,40 @@ class _CopyWithImpl$Query$Viewer<TRes> implements CopyWith$Query$Viewer<TRes> {
     Object? viewer = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer(
+      _then(Query$User(
         viewer: viewer == _undefined || viewer == null
             ? _instance.viewer
-            : (viewer as Query$Viewer$viewer),
+            : (viewer as Query$User$viewer),
         $__typename: $__typename == _undefined || $__typename == null
             ? _instance.$__typename
             : ($__typename as String),
       ));
 
-  CopyWith$Query$Viewer$viewer<TRes> get viewer {
+  CopyWith$Query$User$viewer<TRes> get viewer {
     final local$viewer = _instance.viewer;
-    return CopyWith$Query$Viewer$viewer(local$viewer, (e) => call(viewer: e));
+    return CopyWith$Query$User$viewer(local$viewer, (e) => call(viewer: e));
   }
 }
 
-class _CopyWithStubImpl$Query$Viewer<TRes>
-    implements CopyWith$Query$Viewer<TRes> {
-  _CopyWithStubImpl$Query$Viewer(this._res);
+class _CopyWithStubImpl$Query$User<TRes> implements CopyWith$Query$User<TRes> {
+  _CopyWithStubImpl$Query$User(this._res);
 
   TRes _res;
 
   call({
-    Query$Viewer$viewer? viewer,
+    Query$User$viewer? viewer,
     String? $__typename,
   }) =>
       _res;
 
-  CopyWith$Query$Viewer$viewer<TRes> get viewer =>
-      CopyWith$Query$Viewer$viewer.stub(_res);
+  CopyWith$Query$User$viewer<TRes> get viewer =>
+      CopyWith$Query$User$viewer.stub(_res);
 }
 
-const documentNodeQueryViewer = DocumentNode(definitions: [
+const documentNodeQueryUser = DocumentNode(definitions: [
   OperationDefinitionNode(
     type: OperationType.query,
-    name: NameNode(value: 'Viewer'),
+    name: NameNode(value: 'User'),
     variableDefinitions: [],
     directives: [],
     selectionSet: SelectionSetNode(selections: [
@@ -189,9 +194,141 @@ const documentNodeQueryViewer = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$User _parserFn$Query$User(Map<String, dynamic> data) =>
+    Query$User.fromJson(data);
+typedef OnQueryComplete$Query$User = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$User?,
+);
 
-class Query$Viewer$viewer {
-  Query$Viewer$viewer({
+class Options$Query$User extends graphql.QueryOptions<Query$User> {
+  Options$Query$User({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$User? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$User? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$User(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryUser,
+          parserFn: _parserFn$Query$User,
+        );
+
+  final OnQueryComplete$Query$User? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$User extends graphql.WatchQueryOptions<Query$User> {
+  WatchOptions$Query$User({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$User? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryUser,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$User,
+        );
+}
+
+class FetchMoreOptions$Query$User extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$User({required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQueryUser,
+        );
+}
+
+extension ClientExtension$Query$User on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$User>> query$User(
+          [Options$Query$User? options]) async =>
+      await this.query(options ?? Options$Query$User());
+  graphql.ObservableQuery<Query$User> watchQuery$User(
+          [WatchOptions$Query$User? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$User());
+  void writeQuery$User({
+    required Query$User data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation: graphql.Operation(document: documentNodeQueryUser)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$User? readQuery$User({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation: graphql.Operation(document: documentNodeQueryUser)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$User.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$User> useQuery$User(
+        [Options$Query$User? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$User());
+graphql.ObservableQuery<Query$User> useWatchQuery$User(
+        [WatchOptions$Query$User? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$User());
+
+class Query$User$Widget extends graphql_flutter.Query<Query$User> {
+  Query$User$Widget({
+    widgets.Key? key,
+    Options$Query$User? options,
+    required graphql_flutter.QueryBuilder<Query$User> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$User(),
+          builder: builder,
+        );
+}
+
+class Query$User$viewer {
+  Query$User$viewer({
     required this.id,
     this.name,
     required this.email,
@@ -199,13 +336,13 @@ class Query$Viewer$viewer {
     this.$__typename = 'User',
   });
 
-  factory Query$Viewer$viewer.fromJson(Map<String, dynamic> json) {
+  factory Query$User$viewer.fromJson(Map<String, dynamic> json) {
     final l$id = json['id'];
     final l$name = json['name'];
     final l$email = json['email'];
     final l$websiteUrl = json['websiteUrl'];
     final l$$__typename = json['__typename'];
-    return Query$Viewer$viewer(
+    return Query$User$viewer(
       id: (l$id as String),
       name: (l$name as String?),
       email: (l$email as String),
@@ -260,7 +397,7 @@ class Query$Viewer$viewer {
     if (identical(this, other)) {
       return true;
     }
-    if (other is! Query$Viewer$viewer || runtimeType != other.runtimeType) {
+    if (other is! Query$User$viewer || runtimeType != other.runtimeType) {
       return false;
     }
     final l$id = id;
@@ -292,22 +429,22 @@ class Query$Viewer$viewer {
   }
 }
 
-extension UtilityExtension$Query$Viewer$viewer on Query$Viewer$viewer {
-  CopyWith$Query$Viewer$viewer<Query$Viewer$viewer> get copyWith =>
-      CopyWith$Query$Viewer$viewer(
+extension UtilityExtension$Query$User$viewer on Query$User$viewer {
+  CopyWith$Query$User$viewer<Query$User$viewer> get copyWith =>
+      CopyWith$Query$User$viewer(
         this,
         (i) => i,
       );
 }
 
-abstract class CopyWith$Query$Viewer$viewer<TRes> {
-  factory CopyWith$Query$Viewer$viewer(
-    Query$Viewer$viewer instance,
-    TRes Function(Query$Viewer$viewer) then,
-  ) = _CopyWithImpl$Query$Viewer$viewer;
+abstract class CopyWith$Query$User$viewer<TRes> {
+  factory CopyWith$Query$User$viewer(
+    Query$User$viewer instance,
+    TRes Function(Query$User$viewer) then,
+  ) = _CopyWithImpl$Query$User$viewer;
 
-  factory CopyWith$Query$Viewer$viewer.stub(TRes res) =
-      _CopyWithStubImpl$Query$Viewer$viewer;
+  factory CopyWith$Query$User$viewer.stub(TRes res) =
+      _CopyWithStubImpl$Query$User$viewer;
 
   TRes call({
     String? id,
@@ -318,16 +455,16 @@ abstract class CopyWith$Query$Viewer$viewer<TRes> {
   });
 }
 
-class _CopyWithImpl$Query$Viewer$viewer<TRes>
-    implements CopyWith$Query$Viewer$viewer<TRes> {
-  _CopyWithImpl$Query$Viewer$viewer(
+class _CopyWithImpl$Query$User$viewer<TRes>
+    implements CopyWith$Query$User$viewer<TRes> {
+  _CopyWithImpl$Query$User$viewer(
     this._instance,
     this._then,
   );
 
-  final Query$Viewer$viewer _instance;
+  final Query$User$viewer _instance;
 
-  final TRes Function(Query$Viewer$viewer) _then;
+  final TRes Function(Query$User$viewer) _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -338,7 +475,7 @@ class _CopyWithImpl$Query$Viewer$viewer<TRes>
     Object? websiteUrl = _undefined,
     Object? $__typename = _undefined,
   }) =>
-      _then(Query$Viewer$viewer(
+      _then(Query$User$viewer(
         id: id == _undefined || id == null ? _instance.id : (id as String),
         name: name == _undefined ? _instance.name : (name as String?),
         email: email == _undefined || email == null
@@ -353,9 +490,9 @@ class _CopyWithImpl$Query$Viewer$viewer<TRes>
       ));
 }
 
-class _CopyWithStubImpl$Query$Viewer$viewer<TRes>
-    implements CopyWith$Query$Viewer$viewer<TRes> {
-  _CopyWithStubImpl$Query$Viewer$viewer(this._res);
+class _CopyWithStubImpl$Query$User$viewer<TRes>
+    implements CopyWith$Query$User$viewer<TRes> {
+  _CopyWithStubImpl$Query$User$viewer(this._res);
 
   TRes _res;
 

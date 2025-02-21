@@ -1,4 +1,4 @@
-query Viewer($authorId: ID!, $nRepositories: Int!) {
+query TopRepositories($authorId: ID!, $nRepositories: Int!) {
 	viewer {
 		topRepositories(
 			first: $nRepositories

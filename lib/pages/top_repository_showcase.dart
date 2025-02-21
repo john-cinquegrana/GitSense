@@ -110,3 +110,12 @@ class RepositoryShowcase extends StatelessWidget {
     );
   }
 }
+
+class EasyTopData extends StatelessWidget {
+  const EasyTopData({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Placeholder();
+  }
+}
