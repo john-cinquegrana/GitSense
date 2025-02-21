@@ -21,6 +21,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   graphql_codegen: ^1.2.1
   build_runner: ^2.4.15
+  lints: ^5.1.1
 
 flutter:
   uses-material-design: true
