@@ -12,6 +12,8 @@ targets:
     builders:
       graphql_codegen:
         options:
-          generatedFileHeader: "// GENERATED FILE\n// DO NOT MODIFY\n"
-          clients:
-            - graphql_flutter
+          # clients:
+          #   - graphql_flutter
+          # generatedFileHeader: "// GENERATED FILE\n// DO NOT MODIFY\n"
+          # assetsPath: "lib/graphql/query_models/**.graphql"
+          # outputDirectory: "lib/graphql/queries"
