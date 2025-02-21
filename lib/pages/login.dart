@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gitsense/components/github_requests/repositoriesQuery.dart';
-import 'package:gitsense/components/github_requests/userQuery.dart';
+import 'package:gitsense/components/github_requests/user_query.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';

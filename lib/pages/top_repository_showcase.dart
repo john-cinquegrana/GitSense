@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gitsense/components/github_requests/repositoriesQuery.dart';
-import 'package:gitsense/components/github_requests/userQuery.dart';
+import 'package:gitsense/components/github_requests/repositories_query.dart';
+import 'package:gitsense/components/github_requests/user_query.dart';
 import 'package:gitsense/util/api_translation.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -26,7 +26,7 @@ class TopRepositoryPage extends StatelessWidget {
 }
 
 class _TopRepositoryData extends StatelessWidget {
-  const _TopRepositoryData({required this.builder, super.key});
+  const _TopRepositoryData({required this.builder});
 
   final Widget Function(BuildContext, List<Repository>) builder;
 
