@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gitsense/components/github_requests/user_query.dart';
+import 'package:gitsense/graphql/queries/user.graphql.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';
@@ -11,8 +12,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: Text('Login Page')),
-      body: Query(
-        options: QueryOptions(document: gql(authorInfoQuery)),
+      body: Query$User$Widget(
         builder: (result, {fetchMore, refetch}) {
           // Handle the case if the login has a bad exception to it
           if (result.hasException ||
@@ -23,11 +23,11 @@ class LoginPage extends StatelessWidget {
           // If the login is loading we will do nothing
           bool dataExists = result.isNotLoading && result.data != null;
           if (dataExists) {
-            final data = result.data!['viewer'];
+            final data = result.parsedData!;
             final user = User(
-              id: data['id'],
-              email: data['email'],
-              name: data['name'],
+              id: data.viewer.id,
+              email: data.viewer.email,
+              name: data.viewer.name,
             );
 
             final UserNotifier userNotifier = context.read<UserNotifier>();
