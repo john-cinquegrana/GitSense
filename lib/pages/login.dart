@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
                   onPressed:
                       dataExists
                           ? () {
-                            context.go('/toprepos');
+                            context.push('/toprepos');
                           }
                           : null,
                   child: Text('See Top Repositories'),

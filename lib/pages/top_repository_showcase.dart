@@ -9,6 +9,7 @@ class TopRepositoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Query$TopRepositories$Widget(
         options: Options$Query$TopRepositories(
           variables: Variables$Query$TopRepositories(
@@ -71,26 +72,43 @@ class RepositoryShowcase extends StatelessWidget {
     var result = data.defaultBranchRef?.target?.maybeWhen<Widget?>(
       commit: (commit) {
         return Card(
-          child: Column(
-            children: <Widget>[
-              ListTile(title: Text(data.name)),
-              RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: commit.authorCount.totalCount.toString(),
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    TextSpan(text: ' / '),
-                    TextSpan(
-                      text: commit.totalCount.totalCount.toString(),
-
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
+          margin: EdgeInsets.symmetric(vertical: 16),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  data.name,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
-              ),
-            ],
+                const SizedBox(height: 8),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: commit.authorCount.totalCount.toString(),
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' / ',
+                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(
+                        text: commit.totalCount.totalCount.toString(),
+
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
