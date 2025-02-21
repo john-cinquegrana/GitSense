@@ -67,36 +67,46 @@ class RepositoryShowcase extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Breakpoint here
-    return Card(
-      child: Column(
-        children: <Widget>[
-          ListTile(title: Text(data.name)),
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: 'AuthorCount',
-                  // data
-                  //     .defaultBranchRef
-                  //     .target
-                  //     .data
-                  //     .defaultBranch
-                  //     .authorCount
-                  //     .toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
+    // Build out when we have the data we actually want
+    var result = data.defaultBranchRef?.target?.maybeWhen<Widget?>(
+      commit: (commit) {
+        return Card(
+          child: Column(
+            children: <Widget>[
+              ListTile(title: Text(data.name)),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: commit.authorCount.totalCount.toString(),
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(text: ' / '),
+                    TextSpan(
+                      text: commit.totalCount.totalCount.toString(),
+
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                TextSpan(text: ' / '),
-                TextSpan(
-                  text: 'TBD',
-                  // text: data.defaultBranch.totalCount.toString(),
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
+      orElse: () => null,
     );
+
+    return result ??
+        // Handle the case if SOMEHOW someone has their maximum ammount of
+        // commits on a repository without a branch.
+        Card(
+          child: Column(
+            children: <Widget>[
+              ListTile(title: Text(data.name)),
+              Text('Unknown commit data'),
+            ],
+          ),
+        );
   }
 }
