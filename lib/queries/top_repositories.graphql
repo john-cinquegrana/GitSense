@@ -1,0 +1,33 @@
+query Viewer($authorId: ID!, $nRepositories: Int!) {
+	viewer {
+		topRepositories(
+			first: $nRepositories
+			orderBy: { field: NAME, direction: ASC }
+		) {
+			pageInfo {
+				endCursor
+				hasNextPage
+			}
+			nodes {
+				name
+				url
+				description
+				homepageUrl
+				id
+				defaultBranchRef {
+					name
+					target {
+						... on Commit {
+							authorCount: history(author: { id: $authorId }) {
+								totalCount
+							}
+							totalCount: history {
+								totalCount
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
