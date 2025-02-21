@@ -1,3 +1,5 @@
+// GENERATED FILE
+// DO NOT MODIFY
 class Input$AbortQueuedMigrationsInput {
   factory Input$AbortQueuedMigrationsInput({
     String? clientMutationId,

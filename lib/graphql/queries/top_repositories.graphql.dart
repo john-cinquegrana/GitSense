@@ -1,4 +1,10 @@
+// GENERATED FILE
+// DO NOT MODIFY
+import 'dart:async';
+import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
+import 'package:graphql/client.dart' as graphql;
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 
 class Variables$Query$TopRepositories {
   factory Variables$Query$TopRepositories({
@@ -535,6 +541,159 @@ const documentNodeQueryTopRepositories = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$TopRepositories _parserFn$Query$TopRepositories(
+        Map<String, dynamic> data) =>
+    Query$TopRepositories.fromJson(data);
+typedef OnQueryComplete$Query$TopRepositories = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$TopRepositories?,
+);
+
+class Options$Query$TopRepositories
+    extends graphql.QueryOptions<Query$TopRepositories> {
+  Options$Query$TopRepositories({
+    String? operationName,
+    required Variables$Query$TopRepositories variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$TopRepositories? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$TopRepositories? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$TopRepositories(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryTopRepositories,
+          parserFn: _parserFn$Query$TopRepositories,
+        );
+
+  final OnQueryComplete$Query$TopRepositories? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$TopRepositories
+    extends graphql.WatchQueryOptions<Query$TopRepositories> {
+  WatchOptions$Query$TopRepositories({
+    String? operationName,
+    required Variables$Query$TopRepositories variables,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$TopRepositories? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          variables: variables.toJson(),
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryTopRepositories,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$TopRepositories,
+        );
+}
+
+class FetchMoreOptions$Query$TopRepositories extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$TopRepositories({
+    required graphql.UpdateQuery updateQuery,
+    required Variables$Query$TopRepositories variables,
+  }) : super(
+          updateQuery: updateQuery,
+          variables: variables.toJson(),
+          document: documentNodeQueryTopRepositories,
+        );
+}
+
+extension ClientExtension$Query$TopRepositories on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$TopRepositories>> query$TopRepositories(
+          Options$Query$TopRepositories options) async =>
+      await this.query(options);
+  graphql.ObservableQuery<Query$TopRepositories> watchQuery$TopRepositories(
+          WatchOptions$Query$TopRepositories options) =>
+      this.watchQuery(options);
+  void writeQuery$TopRepositories({
+    required Query$TopRepositories data,
+    required Variables$Query$TopRepositories variables,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+          operation:
+              graphql.Operation(document: documentNodeQueryTopRepositories),
+          variables: variables.toJson(),
+        ),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$TopRepositories? readQuery$TopRepositories({
+    required Variables$Query$TopRepositories variables,
+    bool optimistic = true,
+  }) {
+    final result = this.readQuery(
+      graphql.Request(
+        operation:
+            graphql.Operation(document: documentNodeQueryTopRepositories),
+        variables: variables.toJson(),
+      ),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$TopRepositories.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$TopRepositories> useQuery$TopRepositories(
+        Options$Query$TopRepositories options) =>
+    graphql_flutter.useQuery(options);
+graphql.ObservableQuery<Query$TopRepositories> useWatchQuery$TopRepositories(
+        WatchOptions$Query$TopRepositories options) =>
+    graphql_flutter.useWatchQuery(options);
+
+class Query$TopRepositories$Widget
+    extends graphql_flutter.Query<Query$TopRepositories> {
+  Query$TopRepositories$Widget({
+    widgets.Key? key,
+    required Options$Query$TopRepositories options,
+    required graphql_flutter.QueryBuilder<Query$TopRepositories> builder,
+  }) : super(
+          key: key,
+          options: options,
+          builder: builder,
+        );
+}
 
 class Query$TopRepositories$viewer {
   Query$TopRepositories$viewer({

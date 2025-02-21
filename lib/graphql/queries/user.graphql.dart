@@ -1,4 +1,10 @@
+// GENERATED FILE
+// DO NOT MODIFY
+import 'dart:async';
+import 'package:flutter/widgets.dart' as widgets;
 import 'package:gql/ast.dart';
+import 'package:graphql/client.dart' as graphql;
+import 'package:graphql_flutter/graphql_flutter.dart' as graphql_flutter;
 
 class Query$User {
   Query$User({
@@ -188,6 +194,138 @@ const documentNodeQueryUser = DocumentNode(definitions: [
     ]),
   ),
 ]);
+Query$User _parserFn$Query$User(Map<String, dynamic> data) =>
+    Query$User.fromJson(data);
+typedef OnQueryComplete$Query$User = FutureOr<void> Function(
+  Map<String, dynamic>?,
+  Query$User?,
+);
+
+class Options$Query$User extends graphql.QueryOptions<Query$User> {
+  Options$Query$User({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$User? typedOptimisticResult,
+    Duration? pollInterval,
+    graphql.Context? context,
+    OnQueryComplete$Query$User? onComplete,
+    graphql.OnQueryError? onError,
+  })  : onCompleteWithParsed = onComplete,
+        super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          pollInterval: pollInterval,
+          context: context,
+          onComplete: onComplete == null
+              ? null
+              : (data) => onComplete(
+                    data,
+                    data == null ? null : _parserFn$Query$User(data),
+                  ),
+          onError: onError,
+          document: documentNodeQueryUser,
+          parserFn: _parserFn$Query$User,
+        );
+
+  final OnQueryComplete$Query$User? onCompleteWithParsed;
+
+  @override
+  List<Object?> get properties => [
+        ...super.onComplete == null
+            ? super.properties
+            : super.properties.where((property) => property != onComplete),
+        onCompleteWithParsed,
+      ];
+}
+
+class WatchOptions$Query$User extends graphql.WatchQueryOptions<Query$User> {
+  WatchOptions$Query$User({
+    String? operationName,
+    graphql.FetchPolicy? fetchPolicy,
+    graphql.ErrorPolicy? errorPolicy,
+    graphql.CacheRereadPolicy? cacheRereadPolicy,
+    Object? optimisticResult,
+    Query$User? typedOptimisticResult,
+    graphql.Context? context,
+    Duration? pollInterval,
+    bool? eagerlyFetchResults,
+    bool carryForwardDataOnException = true,
+    bool fetchResults = false,
+  }) : super(
+          operationName: operationName,
+          fetchPolicy: fetchPolicy,
+          errorPolicy: errorPolicy,
+          cacheRereadPolicy: cacheRereadPolicy,
+          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+          context: context,
+          document: documentNodeQueryUser,
+          pollInterval: pollInterval,
+          eagerlyFetchResults: eagerlyFetchResults,
+          carryForwardDataOnException: carryForwardDataOnException,
+          fetchResults: fetchResults,
+          parserFn: _parserFn$Query$User,
+        );
+}
+
+class FetchMoreOptions$Query$User extends graphql.FetchMoreOptions {
+  FetchMoreOptions$Query$User({required graphql.UpdateQuery updateQuery})
+      : super(
+          updateQuery: updateQuery,
+          document: documentNodeQueryUser,
+        );
+}
+
+extension ClientExtension$Query$User on graphql.GraphQLClient {
+  Future<graphql.QueryResult<Query$User>> query$User(
+          [Options$Query$User? options]) async =>
+      await this.query(options ?? Options$Query$User());
+  graphql.ObservableQuery<Query$User> watchQuery$User(
+          [WatchOptions$Query$User? options]) =>
+      this.watchQuery(options ?? WatchOptions$Query$User());
+  void writeQuery$User({
+    required Query$User data,
+    bool broadcast = true,
+  }) =>
+      this.writeQuery(
+        graphql.Request(
+            operation: graphql.Operation(document: documentNodeQueryUser)),
+        data: data.toJson(),
+        broadcast: broadcast,
+      );
+  Query$User? readQuery$User({bool optimistic = true}) {
+    final result = this.readQuery(
+      graphql.Request(
+          operation: graphql.Operation(document: documentNodeQueryUser)),
+      optimistic: optimistic,
+    );
+    return result == null ? null : Query$User.fromJson(result);
+  }
+}
+
+graphql_flutter.QueryHookResult<Query$User> useQuery$User(
+        [Options$Query$User? options]) =>
+    graphql_flutter.useQuery(options ?? Options$Query$User());
+graphql.ObservableQuery<Query$User> useWatchQuery$User(
+        [WatchOptions$Query$User? options]) =>
+    graphql_flutter.useWatchQuery(options ?? WatchOptions$Query$User());
+
+class Query$User$Widget extends graphql_flutter.Query<Query$User> {
+  Query$User$Widget({
+    widgets.Key? key,
+    Options$Query$User? options,
+    required graphql_flutter.QueryBuilder<Query$User> builder,
+  }) : super(
+          key: key,
+          options: options ?? Options$Query$User(),
+          builder: builder,
+        );
+}
 
 class Query$User$viewer {
   Query$User$viewer({
