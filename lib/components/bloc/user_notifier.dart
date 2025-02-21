@@ -8,6 +8,15 @@ class User {
   final String id;
   final String email;
   final String? name;
+
+  bool equals(User? other) {
+    if (identical(this, other)) return true;
+
+    // We don't need to check this one since we know they're not identical
+    if (other == null) return false;
+
+    return other.id == id && other.email == email && other.name == name;
+  }
 }
 
 class UserNotifier extends ChangeNotifier {
@@ -18,6 +27,10 @@ class UserNotifier extends ChangeNotifier {
   bool get hasUser => _user != null;
 
   void setUser(User? user) {
+    // Compare the users and only update if they are different
+    if (_user != null && _user!.equals(user)) {
+      return;
+    }
     _user = user;
     notifyListeners();
   }
