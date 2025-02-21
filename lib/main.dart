@@ -4,7 +4,7 @@ import 'package:gitsense/pages/login.dart';
 import 'package:gitsense/pages/top_repository_showcase.dart';
 import 'package:gitsense/theme.dart';
 import 'package:gitsense/util/github_graphql.dart';
-import 'package:gitsense/components/github_requests/user_query.dart';
+import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:provider/provider.dart';

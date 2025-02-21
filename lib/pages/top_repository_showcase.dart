@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gitsense/components/github_requests/user_query.dart';
+import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:gitsense/graphql/queries/top_repositories.graphql.dart';
 import 'package:gitsense/util/logging.dart';
 
