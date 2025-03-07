@@ -10,11 +10,10 @@ class Variables$Query$TopRepositories {
   factory Variables$Query$TopRepositories({
     required String authorId,
     required int nRepositories,
-  }) =>
-      Variables$Query$TopRepositories._({
-        r'authorId': authorId,
-        r'nRepositories': nRepositories,
-      });
+  }) => Variables$Query$TopRepositories._({
+    r'authorId': authorId,
+    r'nRepositories': nRepositories,
+  });
 
   Variables$Query$TopRepositories._(this._$data);
 
@@ -43,10 +42,7 @@ class Variables$Query$TopRepositories {
   }
 
   CopyWith$Variables$Query$TopRepositories<Variables$Query$TopRepositories>
-      get copyWith => CopyWith$Variables$Query$TopRepositories(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Variables$Query$TopRepositories(this, (i) => i);
 
   @override
   bool operator ==(Object other) {
@@ -74,10 +70,7 @@ class Variables$Query$TopRepositories {
   int get hashCode {
     final l$authorId = authorId;
     final l$nRepositories = nRepositories;
-    return Object.hashAll([
-      l$authorId,
-      l$nRepositories,
-    ]);
+    return Object.hashAll([l$authorId, l$nRepositories]);
   }
 }
 
@@ -90,18 +83,12 @@ abstract class CopyWith$Variables$Query$TopRepositories<TRes> {
   factory CopyWith$Variables$Query$TopRepositories.stub(TRes res) =
       _CopyWithStubImpl$Variables$Query$TopRepositories;
 
-  TRes call({
-    String? authorId,
-    int? nRepositories,
-  });
+  TRes call({String? authorId, int? nRepositories});
 }
 
 class _CopyWithImpl$Variables$Query$TopRepositories<TRes>
     implements CopyWith$Variables$Query$TopRepositories<TRes> {
-  _CopyWithImpl$Variables$Query$TopRepositories(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Variables$Query$TopRepositories(this._instance, this._then);
 
   final Variables$Query$TopRepositories _instance;
 
@@ -112,14 +99,15 @@ class _CopyWithImpl$Variables$Query$TopRepositories<TRes>
   TRes call({
     Object? authorId = _undefined,
     Object? nRepositories = _undefined,
-  }) =>
-      _then(Variables$Query$TopRepositories._({
-        ..._instance._$data,
-        if (authorId != _undefined && authorId != null)
-          'authorId': (authorId as String),
-        if (nRepositories != _undefined && nRepositories != null)
-          'nRepositories': (nRepositories as int),
-      }));
+  }) => _then(
+    Variables$Query$TopRepositories._({
+      ..._instance._$data,
+      if (authorId != _undefined && authorId != null)
+        'authorId': (authorId as String),
+      if (nRepositories != _undefined && nRepositories != null)
+        'nRepositories': (nRepositories as int),
+    }),
+  );
 }
 
 class _CopyWithStubImpl$Variables$Query$TopRepositories<TRes>
@@ -128,25 +116,19 @@ class _CopyWithStubImpl$Variables$Query$TopRepositories<TRes>
 
   TRes _res;
 
-  call({
-    String? authorId,
-    int? nRepositories,
-  }) =>
-      _res;
+  call({String? authorId, int? nRepositories}) => _res;
 }
 
 class Query$TopRepositories {
-  Query$TopRepositories({
-    required this.viewer,
-    this.$__typename = 'Query',
-  });
+  Query$TopRepositories({required this.viewer, this.$__typename = 'Query'});
 
   factory Query$TopRepositories.fromJson(Map<String, dynamic> json) {
     final l$viewer = json['viewer'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories(
       viewer: Query$TopRepositories$viewer.fromJson(
-          (l$viewer as Map<String, dynamic>)),
+        (l$viewer as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -168,10 +150,7 @@ class Query$TopRepositories {
   int get hashCode {
     final l$viewer = viewer;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$viewer,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$viewer, l$$__typename]);
   }
 
   @override
@@ -198,10 +177,7 @@ class Query$TopRepositories {
 
 extension UtilityExtension$Query$TopRepositories on Query$TopRepositories {
   CopyWith$Query$TopRepositories<Query$TopRepositories> get copyWith =>
-      CopyWith$Query$TopRepositories(
-        this,
-        (i) => i,
-      );
+      CopyWith$Query$TopRepositories(this, (i) => i);
 }
 
 abstract class CopyWith$Query$TopRepositories<TRes> {
@@ -213,19 +189,13 @@ abstract class CopyWith$Query$TopRepositories<TRes> {
   factory CopyWith$Query$TopRepositories.stub(TRes res) =
       _CopyWithStubImpl$Query$TopRepositories;
 
-  TRes call({
-    Query$TopRepositories$viewer? viewer,
-    String? $__typename,
-  });
+  TRes call({Query$TopRepositories$viewer? viewer, String? $__typename});
   CopyWith$Query$TopRepositories$viewer<TRes> get viewer;
 }
 
 class _CopyWithImpl$Query$TopRepositories<TRes>
     implements CopyWith$Query$TopRepositories<TRes> {
-  _CopyWithImpl$Query$TopRepositories(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$TopRepositories(this._instance, this._then);
 
   final Query$TopRepositories _instance;
 
@@ -233,23 +203,26 @@ class _CopyWithImpl$Query$TopRepositories<TRes>
 
   static const _undefined = <dynamic, dynamic>{};
 
-  TRes call({
-    Object? viewer = _undefined,
-    Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories(
-        viewer: viewer == _undefined || viewer == null
-            ? _instance.viewer
-            : (viewer as Query$TopRepositories$viewer),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  TRes call({Object? viewer = _undefined, Object? $__typename = _undefined}) =>
+      _then(
+        Query$TopRepositories(
+          viewer:
+              viewer == _undefined || viewer == null
+                  ? _instance.viewer
+                  : (viewer as Query$TopRepositories$viewer),
+          $__typename:
+              $__typename == _undefined || $__typename == null
+                  ? _instance.$__typename
+                  : ($__typename as String),
+        ),
+      );
 
   CopyWith$Query$TopRepositories$viewer<TRes> get viewer {
     final local$viewer = _instance.viewer;
     return CopyWith$Query$TopRepositories$viewer(
-        local$viewer, (e) => call(viewer: e));
+      local$viewer,
+      (e) => call(viewer: e),
+    );
   }
 }
 
@@ -259,241 +232,299 @@ class _CopyWithStubImpl$Query$TopRepositories<TRes>
 
   TRes _res;
 
-  call({
-    Query$TopRepositories$viewer? viewer,
-    String? $__typename,
-  }) =>
-      _res;
+  call({Query$TopRepositories$viewer? viewer, String? $__typename}) => _res;
 
   CopyWith$Query$TopRepositories$viewer<TRes> get viewer =>
       CopyWith$Query$TopRepositories$viewer.stub(_res);
 }
 
-const documentNodeQueryTopRepositories = DocumentNode(definitions: [
-  OperationDefinitionNode(
-    type: OperationType.query,
-    name: NameNode(value: 'TopRepositories'),
-    variableDefinitions: [
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'authorId')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'ID'),
-          isNonNull: true,
+const documentNodeQueryTopRepositories = DocumentNode(
+  definitions: [
+    OperationDefinitionNode(
+      type: OperationType.query,
+      name: NameNode(value: 'TopRepositories'),
+      variableDefinitions: [
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'authorId')),
+          type: NamedTypeNode(name: NameNode(value: 'ID'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-      VariableDefinitionNode(
-        variable: VariableNode(name: NameNode(value: 'nRepositories')),
-        type: NamedTypeNode(
-          name: NameNode(value: 'Int'),
-          isNonNull: true,
+        VariableDefinitionNode(
+          variable: VariableNode(name: NameNode(value: 'nRepositories')),
+          type: NamedTypeNode(name: NameNode(value: 'Int'), isNonNull: true),
+          defaultValue: DefaultValueNode(value: null),
+          directives: [],
         ),
-        defaultValue: DefaultValueNode(value: null),
-        directives: [],
-      ),
-    ],
-    directives: [],
-    selectionSet: SelectionSetNode(selections: [
-      FieldNode(
-        name: NameNode(value: 'viewer'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: SelectionSetNode(selections: [
+      ],
+      directives: [],
+      selectionSet: SelectionSetNode(
+        selections: [
           FieldNode(
-            name: NameNode(value: 'topRepositories'),
+            name: NameNode(value: 'viewer'),
             alias: null,
-            arguments: [
-              ArgumentNode(
-                name: NameNode(value: 'first'),
-                value: VariableNode(name: NameNode(value: 'nRepositories')),
-              ),
-              ArgumentNode(
-                name: NameNode(value: 'orderBy'),
-                value: ObjectValueNode(fields: [
-                  ObjectFieldNode(
-                    name: NameNode(value: 'field'),
-                    value: EnumValueNode(name: NameNode(value: 'NAME')),
-                  ),
-                  ObjectFieldNode(
-                    name: NameNode(value: 'direction'),
-                    value: EnumValueNode(name: NameNode(value: 'ASC')),
-                  ),
-                ]),
-              ),
-            ],
+            arguments: [],
             directives: [],
-            selectionSet: SelectionSetNode(selections: [
-              FieldNode(
-                name: NameNode(value: 'pageInfo'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'endCursor'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'hasNextPage'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: 'nodes'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: SelectionSetNode(selections: [
-                  FieldNode(
-                    name: NameNode(value: 'name'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'url'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'description'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'homepageUrl'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'id'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                  FieldNode(
-                    name: NameNode(value: 'defaultBranchRef'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: SelectionSetNode(selections: [
+            selectionSet: SelectionSetNode(
+              selections: [
+                FieldNode(
+                  name: NameNode(value: 'topRepositories'),
+                  alias: null,
+                  arguments: [
+                    ArgumentNode(
+                      name: NameNode(value: 'first'),
+                      value: VariableNode(
+                        name: NameNode(value: 'nRepositories'),
+                      ),
+                    ),
+                    ArgumentNode(
+                      name: NameNode(value: 'orderBy'),
+                      value: ObjectValueNode(
+                        fields: [
+                          ObjectFieldNode(
+                            name: NameNode(value: 'field'),
+                            value: EnumValueNode(name: NameNode(value: 'NAME')),
+                          ),
+                          ObjectFieldNode(
+                            name: NameNode(value: 'direction'),
+                            value: EnumValueNode(name: NameNode(value: 'ASC')),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                  directives: [],
+                  selectionSet: SelectionSetNode(
+                    selections: [
                       FieldNode(
-                        name: NameNode(value: 'name'),
+                        name: NameNode(value: 'pageInfo'),
                         alias: null,
                         arguments: [],
                         directives: [],
-                        selectionSet: null,
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'endCursor'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'hasNextPage'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
                       ),
                       FieldNode(
-                        name: NameNode(value: 'target'),
+                        name: NameNode(value: 'nodes'),
                         alias: null,
                         arguments: [],
                         directives: [],
-                        selectionSet: SelectionSetNode(selections: [
-                          InlineFragmentNode(
-                            typeCondition: TypeConditionNode(
-                                on: NamedTypeNode(
-                              name: NameNode(value: 'Commit'),
-                              isNonNull: false,
-                            )),
-                            directives: [],
-                            selectionSet: SelectionSetNode(selections: [
-                              FieldNode(
-                                name: NameNode(value: 'history'),
-                                alias: NameNode(value: 'authorCount'),
-                                arguments: [
-                                  ArgumentNode(
-                                    name: NameNode(value: 'author'),
-                                    value: ObjectValueNode(fields: [
-                                      ObjectFieldNode(
-                                        name: NameNode(value: 'id'),
-                                        value: VariableNode(
-                                            name: NameNode(value: 'authorId')),
-                                      )
-                                    ]),
-                                  )
+                        selectionSet: SelectionSetNode(
+                          selections: [
+                            FieldNode(
+                              name: NameNode(value: 'name'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'url'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'description'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'homepageUrl'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'id'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                            FieldNode(
+                              name: NameNode(value: 'defaultBranchRef'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: SelectionSetNode(
+                                selections: [
+                                  FieldNode(
+                                    name: NameNode(value: 'name'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: 'target'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: SelectionSetNode(
+                                      selections: [
+                                        InlineFragmentNode(
+                                          typeCondition: TypeConditionNode(
+                                            on: NamedTypeNode(
+                                              name: NameNode(value: 'Commit'),
+                                              isNonNull: false,
+                                            ),
+                                          ),
+                                          directives: [],
+                                          selectionSet: SelectionSetNode(
+                                            selections: [
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'history',
+                                                ),
+                                                alias: NameNode(
+                                                  value: 'authorCount',
+                                                ),
+                                                arguments: [
+                                                  ArgumentNode(
+                                                    name: NameNode(
+                                                      value: 'author',
+                                                    ),
+                                                    value: ObjectValueNode(
+                                                      fields: [
+                                                        ObjectFieldNode(
+                                                          name: NameNode(
+                                                            value: 'id',
+                                                          ),
+                                                          value: VariableNode(
+                                                            name: NameNode(
+                                                              value: 'authorId',
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                                directives: [],
+                                                selectionSet: SelectionSetNode(
+                                                  selections: [
+                                                    FieldNode(
+                                                      name: NameNode(
+                                                        value: 'totalCount',
+                                                      ),
+                                                      alias: null,
+                                                      arguments: [],
+                                                      directives: [],
+                                                      selectionSet: null,
+                                                    ),
+                                                    FieldNode(
+                                                      name: NameNode(
+                                                        value: '__typename',
+                                                      ),
+                                                      alias: null,
+                                                      arguments: [],
+                                                      directives: [],
+                                                      selectionSet: null,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: 'history',
+                                                ),
+                                                alias: NameNode(
+                                                  value: 'totalCount',
+                                                ),
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: SelectionSetNode(
+                                                  selections: [
+                                                    FieldNode(
+                                                      name: NameNode(
+                                                        value: 'totalCount',
+                                                      ),
+                                                      alias: null,
+                                                      arguments: [],
+                                                      directives: [],
+                                                      selectionSet: null,
+                                                    ),
+                                                    FieldNode(
+                                                      name: NameNode(
+                                                        value: '__typename',
+                                                      ),
+                                                      alias: null,
+                                                      arguments: [],
+                                                      directives: [],
+                                                      selectionSet: null,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              FieldNode(
+                                                name: NameNode(
+                                                  value: '__typename',
+                                                ),
+                                                alias: null,
+                                                arguments: [],
+                                                directives: [],
+                                                selectionSet: null,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        FieldNode(
+                                          name: NameNode(value: '__typename'),
+                                          alias: null,
+                                          arguments: [],
+                                          directives: [],
+                                          selectionSet: null,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  FieldNode(
+                                    name: NameNode(value: '__typename'),
+                                    alias: null,
+                                    arguments: [],
+                                    directives: [],
+                                    selectionSet: null,
+                                  ),
                                 ],
-                                directives: [],
-                                selectionSet: SelectionSetNode(selections: [
-                                  FieldNode(
-                                    name: NameNode(value: 'totalCount'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null,
-                                  ),
-                                  FieldNode(
-                                    name: NameNode(value: '__typename'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null,
-                                  ),
-                                ]),
                               ),
-                              FieldNode(
-                                name: NameNode(value: 'history'),
-                                alias: NameNode(value: 'totalCount'),
-                                arguments: [],
-                                directives: [],
-                                selectionSet: SelectionSetNode(selections: [
-                                  FieldNode(
-                                    name: NameNode(value: 'totalCount'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null,
-                                  ),
-                                  FieldNode(
-                                    name: NameNode(value: '__typename'),
-                                    alias: null,
-                                    arguments: [],
-                                    directives: [],
-                                    selectionSet: null,
-                                  ),
-                                ]),
-                              ),
-                              FieldNode(
-                                name: NameNode(value: '__typename'),
-                                alias: null,
-                                arguments: [],
-                                directives: [],
-                                selectionSet: null,
-                              ),
-                            ]),
-                          ),
-                          FieldNode(
-                            name: NameNode(value: '__typename'),
-                            alias: null,
-                            arguments: [],
-                            directives: [],
-                            selectionSet: null,
-                          ),
-                        ]),
+                            ),
+                            FieldNode(
+                              name: NameNode(value: '__typename'),
+                              alias: null,
+                              arguments: [],
+                              directives: [],
+                              selectionSet: null,
+                            ),
+                          ],
+                        ),
                       ),
                       FieldNode(
                         name: NameNode(value: '__typename'),
@@ -502,25 +533,18 @@ const documentNodeQueryTopRepositories = DocumentNode(definitions: [
                         directives: [],
                         selectionSet: null,
                       ),
-                    ]),
+                    ],
                   ),
-                  FieldNode(
-                    name: NameNode(value: '__typename'),
-                    alias: null,
-                    arguments: [],
-                    directives: [],
-                    selectionSet: null,
-                  ),
-                ]),
-              ),
-              FieldNode(
-                name: NameNode(value: '__typename'),
-                alias: null,
-                arguments: [],
-                directives: [],
-                selectionSet: null,
-              ),
-            ]),
+                ),
+                FieldNode(
+                  name: NameNode(value: '__typename'),
+                  alias: null,
+                  arguments: [],
+                  directives: [],
+                  selectionSet: null,
+                ),
+              ],
+            ),
           ),
           FieldNode(
             name: NameNode(value: '__typename'),
@@ -529,25 +553,16 @@ const documentNodeQueryTopRepositories = DocumentNode(definitions: [
             directives: [],
             selectionSet: null,
           ),
-        ]),
+        ],
       ),
-      FieldNode(
-        name: NameNode(value: '__typename'),
-        alias: null,
-        arguments: [],
-        directives: [],
-        selectionSet: null,
-      ),
-    ]),
-  ),
-]);
-Query$TopRepositories _parserFn$Query$TopRepositories(
-        Map<String, dynamic> data) =>
-    Query$TopRepositories.fromJson(data);
-typedef OnQueryComplete$Query$TopRepositories = FutureOr<void> Function(
-  Map<String, dynamic>?,
-  Query$TopRepositories?,
+    ),
+  ],
 );
+Query$TopRepositories _parserFn$Query$TopRepositories(
+  Map<String, dynamic> data,
+) => Query$TopRepositories.fromJson(data);
+typedef OnQueryComplete$Query$TopRepositories =
+    FutureOr<void> Function(Map<String, dynamic>?, Query$TopRepositories?);
 
 class Options$Query$TopRepositories
     extends graphql.QueryOptions<Query$TopRepositories> {
@@ -563,36 +578,37 @@ class Options$Query$TopRepositories
     graphql.Context? context,
     OnQueryComplete$Query$TopRepositories? onComplete,
     graphql.OnQueryError? onError,
-  })  : onCompleteWithParsed = onComplete,
-        super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          pollInterval: pollInterval,
-          context: context,
-          onComplete: onComplete == null
-              ? null
-              : (data) => onComplete(
-                    data,
-                    data == null ? null : _parserFn$Query$TopRepositories(data),
-                  ),
-          onError: onError,
-          document: documentNodeQueryTopRepositories,
-          parserFn: _parserFn$Query$TopRepositories,
-        );
+  }) : onCompleteWithParsed = onComplete,
+       super(
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         pollInterval: pollInterval,
+         context: context,
+         onComplete:
+             onComplete == null
+                 ? null
+                 : (data) => onComplete(
+                   data,
+                   data == null ? null : _parserFn$Query$TopRepositories(data),
+                 ),
+         onError: onError,
+         document: documentNodeQueryTopRepositories,
+         parserFn: _parserFn$Query$TopRepositories,
+       );
 
   final OnQueryComplete$Query$TopRepositories? onCompleteWithParsed;
 
   @override
   List<Object?> get properties => [
-        ...super.onComplete == null
-            ? super.properties
-            : super.properties.where((property) => property != onComplete),
-        onCompleteWithParsed,
-      ];
+    ...super.onComplete == null
+        ? super.properties
+        : super.properties.where((property) => property != onComplete),
+    onCompleteWithParsed,
+  ];
 }
 
 class WatchOptions$Query$TopRepositories
@@ -611,20 +627,20 @@ class WatchOptions$Query$TopRepositories
     bool carryForwardDataOnException = true,
     bool fetchResults = false,
   }) : super(
-          variables: variables.toJson(),
-          operationName: operationName,
-          fetchPolicy: fetchPolicy,
-          errorPolicy: errorPolicy,
-          cacheRereadPolicy: cacheRereadPolicy,
-          optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
-          context: context,
-          document: documentNodeQueryTopRepositories,
-          pollInterval: pollInterval,
-          eagerlyFetchResults: eagerlyFetchResults,
-          carryForwardDataOnException: carryForwardDataOnException,
-          fetchResults: fetchResults,
-          parserFn: _parserFn$Query$TopRepositories,
-        );
+         variables: variables.toJson(),
+         operationName: operationName,
+         fetchPolicy: fetchPolicy,
+         errorPolicy: errorPolicy,
+         cacheRereadPolicy: cacheRereadPolicy,
+         optimisticResult: optimisticResult ?? typedOptimisticResult?.toJson(),
+         context: context,
+         document: documentNodeQueryTopRepositories,
+         pollInterval: pollInterval,
+         eagerlyFetchResults: eagerlyFetchResults,
+         carryForwardDataOnException: carryForwardDataOnException,
+         fetchResults: fetchResults,
+         parserFn: _parserFn$Query$TopRepositories,
+       );
 }
 
 class FetchMoreOptions$Query$TopRepositories extends graphql.FetchMoreOptions {
@@ -632,41 +648,40 @@ class FetchMoreOptions$Query$TopRepositories extends graphql.FetchMoreOptions {
     required graphql.UpdateQuery updateQuery,
     required Variables$Query$TopRepositories variables,
   }) : super(
-          updateQuery: updateQuery,
-          variables: variables.toJson(),
-          document: documentNodeQueryTopRepositories,
-        );
+         updateQuery: updateQuery,
+         variables: variables.toJson(),
+         document: documentNodeQueryTopRepositories,
+       );
 }
 
 extension ClientExtension$Query$TopRepositories on graphql.GraphQLClient {
   Future<graphql.QueryResult<Query$TopRepositories>> query$TopRepositories(
-          Options$Query$TopRepositories options) async =>
-      await this.query(options);
+    Options$Query$TopRepositories options,
+  ) async => await this.query(options);
   graphql.ObservableQuery<Query$TopRepositories> watchQuery$TopRepositories(
-          WatchOptions$Query$TopRepositories options) =>
-      this.watchQuery(options);
+    WatchOptions$Query$TopRepositories options,
+  ) => this.watchQuery(options);
   void writeQuery$TopRepositories({
     required Query$TopRepositories data,
     required Variables$Query$TopRepositories variables,
     bool broadcast = true,
-  }) =>
-      this.writeQuery(
-        graphql.Request(
-          operation:
-              graphql.Operation(document: documentNodeQueryTopRepositories),
-          variables: variables.toJson(),
-        ),
-        data: data.toJson(),
-        broadcast: broadcast,
-      );
+  }) => this.writeQuery(
+    graphql.Request(
+      operation: graphql.Operation(document: documentNodeQueryTopRepositories),
+      variables: variables.toJson(),
+    ),
+    data: data.toJson(),
+    broadcast: broadcast,
+  );
   Query$TopRepositories? readQuery$TopRepositories({
     required Variables$Query$TopRepositories variables,
     bool optimistic = true,
   }) {
     final result = this.readQuery(
       graphql.Request(
-        operation:
-            graphql.Operation(document: documentNodeQueryTopRepositories),
+        operation: graphql.Operation(
+          document: documentNodeQueryTopRepositories,
+        ),
         variables: variables.toJson(),
       ),
       optimistic: optimistic,
@@ -676,11 +691,11 @@ extension ClientExtension$Query$TopRepositories on graphql.GraphQLClient {
 }
 
 graphql_flutter.QueryHookResult<Query$TopRepositories> useQuery$TopRepositories(
-        Options$Query$TopRepositories options) =>
-    graphql_flutter.useQuery(options);
+  Options$Query$TopRepositories options,
+) => graphql_flutter.useQuery(options);
 graphql.ObservableQuery<Query$TopRepositories> useWatchQuery$TopRepositories(
-        WatchOptions$Query$TopRepositories options) =>
-    graphql_flutter.useWatchQuery(options);
+  WatchOptions$Query$TopRepositories options,
+) => graphql_flutter.useWatchQuery(options);
 
 class Query$TopRepositories$Widget
     extends graphql_flutter.Query<Query$TopRepositories> {
@@ -688,11 +703,7 @@ class Query$TopRepositories$Widget
     widgets.Key? key,
     required Options$Query$TopRepositories options,
     required graphql_flutter.QueryBuilder<Query$TopRepositories> builder,
-  }) : super(
-          key: key,
-          options: options,
-          builder: builder,
-        );
+  }) : super(key: key, options: options, builder: builder);
 }
 
 class Query$TopRepositories$viewer {
@@ -706,7 +717,8 @@ class Query$TopRepositories$viewer {
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer(
       topRepositories: Query$TopRepositories$viewer$topRepositories.fromJson(
-          (l$topRepositories as Map<String, dynamic>)),
+        (l$topRepositories as Map<String, dynamic>),
+      ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -728,10 +740,7 @@ class Query$TopRepositories$viewer {
   int get hashCode {
     final l$topRepositories = topRepositories;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$topRepositories,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$topRepositories, l$$__typename]);
   }
 
   @override
@@ -760,10 +769,7 @@ class Query$TopRepositories$viewer {
 extension UtilityExtension$Query$TopRepositories$viewer
     on Query$TopRepositories$viewer {
   CopyWith$Query$TopRepositories$viewer<Query$TopRepositories$viewer>
-      get copyWith => CopyWith$Query$TopRepositories$viewer(
-            this,
-            (i) => i,
-          );
+  get copyWith => CopyWith$Query$TopRepositories$viewer(this, (i) => i);
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer<TRes> {
@@ -780,15 +786,12 @@ abstract class CopyWith$Query$TopRepositories$viewer<TRes> {
     String? $__typename,
   });
   CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
-      get topRepositories;
+  get topRepositories;
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer<TRes>
     implements CopyWith$Query$TopRepositories$viewer<TRes> {
-  _CopyWithImpl$Query$TopRepositories$viewer(
-    this._instance,
-    this._then,
-  );
+  _CopyWithImpl$Query$TopRepositories$viewer(this._instance, this._then);
 
   final Query$TopRepositories$viewer _instance;
 
@@ -799,22 +802,27 @@ class _CopyWithImpl$Query$TopRepositories$viewer<TRes>
   TRes call({
     Object? topRepositories = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories$viewer(
-        topRepositories: topRepositories == _undefined ||
-                topRepositories == null
-            ? _instance.topRepositories
-            : (topRepositories as Query$TopRepositories$viewer$topRepositories),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer(
+      topRepositories:
+          topRepositories == _undefined || topRepositories == null
+              ? _instance.topRepositories
+              : (topRepositories
+                  as Query$TopRepositories$viewer$topRepositories),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
-      get topRepositories {
+  get topRepositories {
     final local$topRepositories = _instance.topRepositories;
     return CopyWith$Query$TopRepositories$viewer$topRepositories(
-        local$topRepositories, (e) => call(topRepositories: e));
+      local$topRepositories,
+      (e) => call(topRepositories: e),
+    );
   }
 }
 
@@ -827,12 +835,11 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer<TRes>
   call({
     Query$TopRepositories$viewer$topRepositories? topRepositories,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$TopRepositories$viewer$topRepositories<TRes>
-      get topRepositories =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories.stub(_res);
+  get topRepositories =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories.stub(_res);
 }
 
 class Query$TopRepositories$viewer$topRepositories {
@@ -843,19 +850,26 @@ class Query$TopRepositories$viewer$topRepositories {
   });
 
   factory Query$TopRepositories$viewer$topRepositories.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$pageInfo = json['pageInfo'];
     final l$nodes = json['nodes'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories(
       pageInfo: Query$TopRepositories$viewer$topRepositories$pageInfo.fromJson(
-          (l$pageInfo as Map<String, dynamic>)),
-      nodes: (l$nodes as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : Query$TopRepositories$viewer$topRepositories$nodes.fromJson(
-                  (e as Map<String, dynamic>)))
-          .toList(),
+        (l$pageInfo as Map<String, dynamic>),
+      ),
+      nodes:
+          (l$nodes as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    e == null
+                        ? null
+                        : Query$TopRepositories$viewer$topRepositories$nodes.fromJson(
+                          (e as Map<String, dynamic>),
+                        ),
+              )
+              .toList(),
       $__typename: (l$$__typename as String),
     );
   }
@@ -931,11 +945,10 @@ class Query$TopRepositories$viewer$topRepositories {
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories
     on Query$TopRepositories$viewer$topRepositories {
   CopyWith$Query$TopRepositories$viewer$topRepositories<
-          Query$TopRepositories$viewer$topRepositories>
-      get copyWith => CopyWith$Query$TopRepositories$viewer$topRepositories(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories(this, (i) => i);
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories<TRes> {
@@ -953,13 +966,17 @@ abstract class CopyWith$Query$TopRepositories$viewer$topRepositories<TRes> {
     String? $__typename,
   });
   CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
-      get pageInfo;
+  get pageInfo;
   TRes nodes(
-      Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
-              Iterable<
-                  CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
-                      Query$TopRepositories$viewer$topRepositories$nodes>?>?)
-          _fn);
+    Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
+      Iterable<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+          Query$TopRepositories$viewer$topRepositories$nodes
+        >?
+      >?,
+    )
+    _fn,
+  );
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories<TRes>
@@ -979,41 +996,59 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories<TRes>
     Object? pageInfo = _undefined,
     Object? nodes = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories$viewer$topRepositories(
-        pageInfo: pageInfo == _undefined || pageInfo == null
-            ? _instance.pageInfo
-            : (pageInfo
-                as Query$TopRepositories$viewer$topRepositories$pageInfo),
-        nodes: nodes == _undefined
-            ? _instance.nodes
-            : (nodes
-                as List<Query$TopRepositories$viewer$topRepositories$nodes?>?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories(
+      pageInfo:
+          pageInfo == _undefined || pageInfo == null
+              ? _instance.pageInfo
+              : (pageInfo
+                  as Query$TopRepositories$viewer$topRepositories$pageInfo),
+      nodes:
+          nodes == _undefined
+              ? _instance.nodes
+              : (nodes
+                  as List<
+                    Query$TopRepositories$viewer$topRepositories$nodes?
+                  >?),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
-      get pageInfo {
+  get pageInfo {
     final local$pageInfo = _instance.pageInfo;
     return CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
-        local$pageInfo, (e) => call(pageInfo: e));
+      local$pageInfo,
+      (e) => call(pageInfo: e),
+    );
   }
 
   TRes nodes(
-          Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
-                  Iterable<
-                      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
-                          Query$TopRepositories$viewer$topRepositories$nodes>?>?)
-              _fn) =>
-      call(
-          nodes: _fn(_instance.nodes?.map((e) => e == null
-              ? null
-              : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
-                  e,
-                  (i) => i,
-                )))?.toList());
+    Iterable<Query$TopRepositories$viewer$topRepositories$nodes?>? Function(
+      Iterable<
+        CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
+          Query$TopRepositories$viewer$topRepositories$nodes
+        >?
+      >?,
+    )
+    _fn,
+  ) => call(
+    nodes:
+        _fn(
+          _instance.nodes?.map(
+            (e) =>
+                e == null
+                    ? null
+                    : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
+                      e,
+                      (i) => i,
+                    ),
+          ),
+        )?.toList(),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories<TRes>
@@ -1026,13 +1061,11 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories<TRes>
     Query$TopRepositories$viewer$topRepositories$pageInfo? pageInfo,
     List<Query$TopRepositories$viewer$topRepositories$nodes?>? nodes,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
-      get pageInfo =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo.stub(
-              _res);
+  get pageInfo =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo.stub(_res);
 
   nodes(_fn) => _res;
 }
@@ -1045,7 +1078,8 @@ class Query$TopRepositories$viewer$topRepositories$pageInfo {
   });
 
   factory Query$TopRepositories$viewer$topRepositories$pageInfo.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$endCursor = json['endCursor'];
     final l$hasNextPage = json['hasNextPage'];
     final l$$__typename = json['__typename'];
@@ -1078,11 +1112,7 @@ class Query$TopRepositories$viewer$topRepositories$pageInfo {
     final l$endCursor = endCursor;
     final l$hasNextPage = hasNextPage;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$endCursor,
-      l$hasNextPage,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$endCursor, l$hasNextPage, l$$__typename]);
   }
 
   @override
@@ -1116,30 +1146,28 @@ class Query$TopRepositories$viewer$topRepositories$pageInfo {
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$pageInfo
     on Query$TopRepositories$viewer$topRepositories$pageInfo {
   CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<
-          Query$TopRepositories$viewer$topRepositories$pageInfo>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$pageInfo
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo(
     Query$TopRepositories$viewer$topRepositories$pageInfo instance,
     TRes Function(Query$TopRepositories$viewer$topRepositories$pageInfo) then,
   ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo;
 
-  TRes call({
-    String? endCursor,
-    bool? hasNextPage,
-    String? $__typename,
-  });
+  TRes call({String? endCursor, bool? hasNextPage, String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
@@ -1153,7 +1181,7 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
   final Query$TopRepositories$viewer$topRepositories$pageInfo _instance;
 
   final TRes Function(Query$TopRepositories$viewer$topRepositories$pageInfo)
-      _then;
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1161,35 +1189,36 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes>
     Object? endCursor = _undefined,
     Object? hasNextPage = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories$viewer$topRepositories$pageInfo(
-        endCursor: endCursor == _undefined
-            ? _instance.endCursor
-            : (endCursor as String?),
-        hasNextPage: hasNextPage == _undefined || hasNextPage == null
-            ? _instance.hasNextPage
-            : (hasNextPage as bool),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$pageInfo(
+      endCursor:
+          endCursor == _undefined
+              ? _instance.endCursor
+              : (endCursor as String?),
+      hasNextPage:
+          hasNextPage == _undefined || hasNextPage == null
+              ? _instance.hasNextPage
+              : (hasNextPage as bool),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$pageInfo<TRes> {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$pageInfo(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    String? endCursor,
-    bool? hasNextPage,
-    String? $__typename,
-  }) =>
-      _res;
+  call({String? endCursor, bool? hasNextPage, String? $__typename}) => _res;
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes {
@@ -1204,7 +1233,8 @@ class Query$TopRepositories$viewer$topRepositories$nodes {
   });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$url = json['url'];
     final l$description = json['description'];
@@ -1218,10 +1248,12 @@ class Query$TopRepositories$viewer$topRepositories$nodes {
       description: (l$description as String?),
       homepageUrl: (l$homepageUrl as String?),
       id: (l$id as String),
-      defaultBranchRef: l$defaultBranchRef == null
-          ? null
-          : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
-              .fromJson((l$defaultBranchRef as Map<String, dynamic>)),
+      defaultBranchRef:
+          l$defaultBranchRef == null
+              ? null
+              : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.fromJson(
+                (l$defaultBranchRef as Map<String, dynamic>),
+              ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1237,7 +1269,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes {
   final String id;
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
-      defaultBranchRef;
+  defaultBranchRef;
 
   final String $__typename;
 
@@ -1331,24 +1363,25 @@ class Query$TopRepositories$viewer$topRepositories$nodes {
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes
     on Query$TopRepositories$viewer$topRepositories$nodes {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
-          Query$TopRepositories$viewer$topRepositories$nodes>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes
+  >
+  get copyWith => CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
+    this,
+    (i) => i,
+  );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes(
     Query$TopRepositories$viewer$topRepositories$nodes instance,
     TRes Function(Query$TopRepositories$viewer$topRepositories$nodes) then,
   ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes.stub(
-          TRes res) =
-      _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes;
+    TRes res,
+  ) = _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes;
 
   TRes call({
     String? name,
@@ -1357,11 +1390,13 @@ abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<
     String? homepageUrl,
     String? id,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
-        defaultBranchRef,
+    defaultBranchRef,
     String? $__typename,
   });
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-      TRes> get defaultBranchRef;
+    TRes
+  >
+  get defaultBranchRef;
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
@@ -1386,36 +1421,47 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
     Object? id = _undefined,
     Object? defaultBranchRef = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories$viewer$topRepositories$nodes(
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        url: url == _undefined || url == null ? _instance.url : (url as String),
-        description: description == _undefined
-            ? _instance.description
-            : (description as String?),
-        homepageUrl: homepageUrl == _undefined
-            ? _instance.homepageUrl
-            : (homepageUrl as String?),
-        id: id == _undefined || id == null ? _instance.id : (id as String),
-        defaultBranchRef: defaultBranchRef == _undefined
-            ? _instance.defaultBranchRef
-            : (defaultBranchRef
-                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$nodes(
+      name:
+          name == _undefined || name == null
+              ? _instance.name
+              : (name as String),
+      url: url == _undefined || url == null ? _instance.url : (url as String),
+      description:
+          description == _undefined
+              ? _instance.description
+              : (description as String?),
+      homepageUrl:
+          homepageUrl == _undefined
+              ? _instance.homepageUrl
+              : (homepageUrl as String?),
+      id: id == _undefined || id == null ? _instance.id : (id as String),
+      defaultBranchRef:
+          defaultBranchRef == _undefined
+              ? _instance.defaultBranchRef
+              : (defaultBranchRef
+                  as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-      TRes> get defaultBranchRef {
+    TRes
+  >
+  get defaultBranchRef {
     final local$defaultBranchRef = _instance.defaultBranchRef;
     return local$defaultBranchRef == null
-        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
-            .stub(_then(_instance))
+        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.stub(
+          _then(_instance),
+        )
         : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
-            local$defaultBranchRef, (e) => call(defaultBranchRef: e));
+          local$defaultBranchRef,
+          (e) => call(defaultBranchRef: e),
+        );
   }
 }
 
@@ -1423,7 +1469,8 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes<TRes> {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1434,16 +1481,17 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes<TRes>
     String? homepageUrl,
     String? id,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef?
-        defaultBranchRef,
+    defaultBranchRef,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-          TRes>
-      get defaultBranchRef =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
-              .stub(_res);
+    TRes
+  >
+  get defaultBranchRef =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.stub(
+        _res,
+      );
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
@@ -1454,16 +1502,19 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
   });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$name = json['name'];
     final l$target = json['target'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
       name: (l$name as String),
-      target: l$target == null
-          ? null
-          : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
-              .fromJson((l$target as Map<String, dynamic>)),
+      target:
+          l$target == null
+              ? null
+              : Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.fromJson(
+                (l$target as Map<String, dynamic>),
+              ),
       $__typename: (l$$__typename as String),
     );
   }
@@ -1471,7 +1522,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
   final String name;
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
-      target;
+  target;
 
   final String $__typename;
 
@@ -1491,11 +1542,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
     final l$name = name;
     final l$target = target;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$name,
-      l$target,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$name, l$target, l$$__typename]);
   }
 
   @override
@@ -1530,54 +1577,64 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
     on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef;
 
   TRes call({
     String? name,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
-        target,
+    target,
     String? $__typename,
   });
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-      TRes> get target;
+    TRes
+  >
+  get target;
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -1585,83 +1642,103 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBr
     Object? name = _undefined,
     Object? target = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
-        name: name == _undefined || name == null
-            ? _instance.name
-            : (name as String),
-        target: target == _undefined
-            ? _instance.target
-            : (target
-                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
+      name:
+          name == _undefined || name == null
+              ? _instance.name
+              : (name as String),
+      target:
+          target == _undefined
+              ? _instance.target
+              : (target
+                  as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-      TRes> get target {
+    TRes
+  >
+  get target {
     final local$target = _instance.target;
     return local$target == null
-        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
-            .stub(_then(_instance))
+        ? CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.stub(
+          _then(_instance),
+        )
         : CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-            local$target, (e) => call(target: e));
+          local$target,
+          (e) => call(target: e),
+        );
   }
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
   call({
     String? name,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target?
-        target,
+    target,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-          TRes>
-      get target =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
-              .stub(_res);
+    TRes
+  >
+  get target =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.stub(
+        _res,
+      );
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-      {required this.$__typename});
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target({
+    required this.$__typename,
+  });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     switch (json["__typename"] as String) {
       case "Commit":
-        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
-            .fromJson(json);
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.fromJson(
+          json,
+        );
 
       case "Blob":
-        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
-            .fromJson(json);
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.fromJson(
+          json,
+        );
 
       case "Tag":
-        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
-            .fromJson(json);
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.fromJson(
+          json,
+        );
 
       case "Tree":
-        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
-            .fromJson(json);
+        return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.fromJson(
+          json,
+        );
 
       default:
         final l$$__typename = json['__typename'];
         return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-            $__typename: (l$$__typename as String));
+          $__typename: (l$$__typename as String),
+        );
     }
   }
 
@@ -1702,43 +1779,56 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
     on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
+        this,
+        (i) => i,
+      );
   _T when<_T>({
     required _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
-        commit,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+    )
+    commit,
     required _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
-        blob,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+    )
+    blob,
     required _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
-        tag,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+    )
+    tag,
     required _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
-        tree,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+    )
+    tree,
     required _T Function() orElse,
   }) {
     switch ($__typename) {
       case "Commit":
-        return commit(this
-            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
+        return commit(
+          this
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+        );
 
       case "Blob":
-        return blob(this
-            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
+        return blob(
+          this
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+        );
 
       case "Tag":
-        return tag(this
-            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
+        return tag(
+          this
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+        );
 
       case "Tree":
-        return tree(this
-            as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
+        return tree(
+          this
+              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+        );
 
       default:
         return orElse();
@@ -1747,48 +1837,60 @@ extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$de
 
   _T maybeWhen<_T>({
     _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)?
-        commit,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+    )?
+    commit,
     _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)?
-        blob,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+    )?
+    blob,
     _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)?
-        tag,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+    )?
+    tag,
     _T Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)?
-        tree,
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+    )?
+    tree,
     required _T Function() orElse,
   }) {
     switch ($__typename) {
       case "Commit":
         if (commit != null) {
-          return commit(this
-              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit);
+          return commit(
+            this
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+          );
         } else {
           return orElse();
         }
 
       case "Blob":
         if (blob != null) {
-          return blob(this
-              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob);
+          return blob(
+            this
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+          );
         } else {
           return orElse();
         }
 
       case "Tag":
         if (tag != null) {
-          return tag(this
-              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag);
+          return tag(
+            this
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+          );
         } else {
           return orElse();
         }
 
       case "Tree":
         if (tree != null) {
-          return tree(this
-              as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree);
+          return tree(
+            this
+                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+          );
         } else {
           return orElse();
         }
@@ -1800,55 +1902,68 @@ extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$de
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target;
 
   TRes call({String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-          $__typename: $__typename == _undefined || $__typename == null
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
+      $__typename:
+          $__typename == _undefined || $__typename == null
               ? _instance.$__typename
-              : ($__typename as String)));
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -1865,26 +1980,29 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
   });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$authorCount = json['authorCount'];
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
       authorCount:
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-              .fromJson((l$authorCount as Map<String, dynamic>)),
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.fromJson(
+            (l$authorCount as Map<String, dynamic>),
+          ),
       totalCount:
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-              .fromJson((l$totalCount as Map<String, dynamic>)),
+          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.fromJson(
+            (l$totalCount as Map<String, dynamic>),
+          ),
       $__typename: (l$$__typename as String),
     );
   }
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-      authorCount;
+  authorCount;
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-      totalCount;
+  totalCount;
 
   final String $__typename;
 
@@ -1904,11 +2022,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
     final l$authorCount = authorCount;
     final l$totalCount = totalCount;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$authorCount,
-      l$totalCount,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$authorCount, l$totalCount, l$$__typename]);
   }
 
   @override
@@ -1941,59 +2055,72 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit;
 
   TRes call({
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
-        authorCount,
+    authorCount,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
-        totalCount,
+    totalCount,
     String? $__typename,
   });
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-      TRes> get authorCount;
+    TRes
+  >
+  get authorCount;
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-      TRes> get totalCount;
+    TRes
+  >
+  get totalCount;
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
@@ -2001,67 +2128,84 @@ class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBr
     Object? authorCount = _undefined,
     Object? totalCount = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
-        authorCount: authorCount == _undefined || authorCount == null
-            ? _instance.authorCount
-            : (authorCount
-                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount),
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount
-                as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
+      authorCount:
+          authorCount == _undefined || authorCount == null
+              ? _instance.authorCount
+              : (authorCount
+                  as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount),
+      totalCount:
+          totalCount == _undefined || totalCount == null
+              ? _instance.totalCount
+              : (totalCount
+                  as Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-      TRes> get authorCount {
+    TRes
+  >
+  get authorCount {
     final local$authorCount = _instance.authorCount;
     return CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
-        local$authorCount, (e) => call(authorCount: e));
+      local$authorCount,
+      (e) => call(authorCount: e),
+    );
   }
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-      TRes> get totalCount {
+    TRes
+  >
+  get totalCount {
     final local$totalCount = _instance.totalCount;
     return CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
-        local$totalCount, (e) => call(totalCount: e));
+      local$totalCount,
+      (e) => call(totalCount: e),
+    );
   }
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
   call({
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount?
-        authorCount,
+    authorCount,
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount?
-        totalCount,
+    totalCount,
     String? $__typename,
-  }) =>
-      _res;
+  }) => _res;
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-          TRes>
-      get authorCount =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-              .stub(_res);
+    TRes
+  >
+  get authorCount =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.stub(
+        _res,
+      );
 
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-          TRes>
-      get totalCount =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-              .stub(_res);
+    TRes
+  >
+  get totalCount =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.stub(
+        _res,
+      );
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
@@ -2071,7 +2215,8 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
   });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
@@ -2097,10 +2242,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
   int get hashCode {
     final l$totalCount = totalCount;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$totalCount,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$totalCount, l$$__typename]);
   }
 
   @override
@@ -2128,85 +2270,92 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount;
 
-  TRes call({
-    int? totalCount,
-    String? $__typename,
-  });
+  TRes call({int? totalCount, String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? totalCount = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
+      totalCount:
+          totalCount == _undefined || totalCount == null
+              ? _instance.totalCount
+              : (totalCount as int),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$authorCount(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    int? totalCount,
-    String? $__typename,
-  }) =>
-      _res;
+  call({int? totalCount, String? $__typename}) => _res;
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
@@ -2216,7 +2365,8 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
   });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$totalCount = json['totalCount'];
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
@@ -2242,10 +2392,7 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
   int get hashCode {
     final l$totalCount = totalCount;
     final l$$__typename = $__typename;
-    return Object.hashAll([
-      l$totalCount,
-      l$$__typename,
-    ]);
+    return Object.hashAll([l$totalCount, l$$__typename]);
   }
 
   @override
@@ -2273,98 +2420,108 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount;
 
-  TRes call({
-    int? totalCount,
-    String? $__typename,
-  });
+  TRes call({int? totalCount, String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({
     Object? totalCount = _undefined,
     Object? $__typename = _undefined,
-  }) =>
-      _then(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
-        totalCount: totalCount == _undefined || totalCount == null
-            ? _instance.totalCount
-            : (totalCount as int),
-        $__typename: $__typename == _undefined || $__typename == null
-            ? _instance.$__typename
-            : ($__typename as String),
-      ));
+  }) => _then(
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
+      totalCount:
+          totalCount == _undefined || totalCount == null
+              ? _instance.totalCount
+              : (totalCount as int),
+      $__typename:
+          $__typename == _undefined || $__typename == null
+              ? _instance.$__typename
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit$totalCount(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
-  call({
-    int? totalCount,
-    String? $__typename,
-  }) =>
-      _res;
+  call({int? totalCount, String? $__typename}) => _res;
 }
 
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
     implements
         Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-      {this.$__typename = 'Blob'});
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob({
+    this.$__typename = 'Blob',
+  });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-        $__typename: (l$$__typename as String));
+      $__typename: (l$$__typename as String),
+    );
   }
 
   final String $__typename;
@@ -2402,66 +2559,81 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob;
 
   TRes call({String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-          $__typename: $__typename == _undefined || $__typename == null
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
+      $__typename:
+          $__typename == _undefined || $__typename == null
               ? _instance.$__typename
-              : ($__typename as String)));
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Blob(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2471,14 +2643,17 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defau
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
     implements
         Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-      {this.$__typename = 'Tag'});
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag({
+    this.$__typename = 'Tag',
+  });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-        $__typename: (l$$__typename as String));
+      $__typename: (l$$__typename as String),
+    );
   }
 
   final String $__typename;
@@ -2516,66 +2691,81 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag;
 
   TRes call({String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-          $__typename: $__typename == _undefined || $__typename == null
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
+      $__typename:
+          $__typename == _undefined || $__typename == null
               ? _instance.$__typename
-              : ($__typename as String)));
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tag(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
@@ -2585,14 +2775,17 @@ class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defau
 class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
     implements
         Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target {
-  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-      {this.$__typename = 'Tree'});
+  Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree({
+    this.$__typename = 'Tree',
+  });
 
   factory Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.fromJson(
-      Map<String, dynamic> json) {
+    Map<String, dynamic> json,
+  ) {
     final l$$__typename = json['__typename'];
     return Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-        $__typename: (l$$__typename as String));
+      $__typename: (l$$__typename as String),
+    );
   }
 
   final String $__typename;
@@ -2630,66 +2823,81 @@ class Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target
 }
 
 extension UtilityExtension$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
-    on Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree {
+    on
+        Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree {
   CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree>
-      get copyWith =>
-          CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-            this,
-            (i) => i,
-          );
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
+  >
+  get copyWith =>
+      CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+        this,
+        (i) => i,
+      );
 }
 
 abstract class CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-    TRes> {
+  TRes
+> {
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
     Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
-        instance,
+    instance,
     TRes Function(
-            Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
-        then,
-  ) = _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
+      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+    )
+    then,
+  ) =
+      _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
 
   factory CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree.stub(
-          TRes res) =
+    TRes res,
+  ) =
       _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree;
 
   TRes call({String? $__typename});
 }
 
 class _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-            TRes> {
+          TRes
+        > {
   _CopyWithImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
     this._instance,
     this._then,
   );
 
   final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree
-      _instance;
+  _instance;
 
   final TRes Function(
-          Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree)
-      _then;
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree,
+  )
+  _then;
 
   static const _undefined = <dynamic, dynamic>{};
 
   TRes call({Object? $__typename = _undefined}) => _then(
-      Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-          $__typename: $__typename == _undefined || $__typename == null
+    Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
+      $__typename:
+          $__typename == _undefined || $__typename == null
               ? _instance.$__typename
-              : ($__typename as String)));
+              : ($__typename as String),
+    ),
+  );
 }
 
 class _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-        TRes>
+  TRes
+>
     implements
         CopyWith$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree<
-            TRes> {
+          TRes
+        > {
   _CopyWithStubImpl$Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Tree(
-      this._res);
+    this._res,
+  );
 
   TRes _res;
 
