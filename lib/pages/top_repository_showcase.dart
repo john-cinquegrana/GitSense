@@ -94,8 +94,13 @@ class _PageHeader extends StatelessWidget {
   const _PageHeader();
 
   @override
-  Widget build(final BuildContext context) =>
-      const Column(children: <Widget>[Text('Top Repositories')]);
+  Widget build(final BuildContext context) => const Column(
+    children: <Widget>[
+      // TODO(jcinquegrana): Flesh out the title
+      Text('Top Repositories'),
+      Text("Ever wonder what it's like?"),
+    ],
+  );
 }
 
 /// A stateless widget that showcases a repository.
