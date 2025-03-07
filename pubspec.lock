@@ -297,7 +297,7 @@ packages:
     source: hosted
     version: "4.0.5"
   gql:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: gql
       sha256: "650e79ed60c21579ca3bd17ebae8a8c8d22cde267b03a19bf3b35996baaa843a"
@@ -377,7 +377,7 @@ packages:
     source: hosted
     version: "1.0.0"
   graphql:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: graphql
       sha256: e15f0cb6299baacff816b844ca103ea0f3e85da30109ea6a0b7c3d58eaafc6ef
