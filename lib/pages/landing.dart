@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
+/// A stateless widget that represents the landing page of the application.
+///
+/// This page is displayed when the user first opens the app.
 class LandingPage extends StatelessWidget {
+  /// Creates a [LandingPage] widget.
+  ///
+  /// The [key] parameter is optional and can be used to uniquely identify
+  /// this widget in the widget tree.
   const LandingPage({super.key});
 
   @override
@@ -20,7 +27,9 @@ class LandingPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                'This is a simple little app I am creating that will attach to the Github API and provide some cool insights into your recent activity.',
+                'This is a simple little app I am creating that will attach to '
+                'the Github API and provide some cool insights into your '
+                'recent activity.',
                 style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 20),

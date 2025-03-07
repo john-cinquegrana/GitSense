@@ -2,10 +2,19 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:gitsense/graphql/queries/top_repositories.graphql.dart';
+import 'package:gitsense/util/github_graphql.dart';
 import 'package:gitsense/util/logging.dart';
-import 'package:graphql/src/core/query_result.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
+/// A stateless widget that represents the top repository page in the
+/// application.
+///
+/// This page showcases the top repositories.
 class TopRepositoryPage extends StatelessWidget {
+  /// Creates a [TopRepositoryPage] widget.
+  ///
+  /// The [key] parameter is optional and can be used to uniquely identify the
+  /// widget.
   const TopRepositoryPage({super.key});
 
   @override
@@ -20,8 +29,8 @@ class TopRepositoryPage extends StatelessWidget {
       ),
       builder: (
         final QueryResult<Query$TopRepositories> result, {
-        final fetchMore,
-        final refetch,
+        final FetchFunction<Query$TopRepositories> fetchMore,
+        final RefetchFunction<Query$TopRepositories> refetch,
       }) {
         // If the data is loading, we give a loading screen
         if (result.isLoading) {
@@ -40,7 +49,8 @@ class TopRepositoryPage extends StatelessWidget {
           return const Center(child: Text('Oopsies, we did a problemo'));
         }
 
-        // Pull out the list of repositories, using an empty list if we found none
+        // Pull out the list of repositories, using an empty list if we found
+        // none
         final List<Query$TopRepositories$viewer$topRepositories$nodes?> nodes =
             result.parsedData!.viewer.topRepositories.nodes ??
             <Query$TopRepositories$viewer$topRepositories$nodes?>[];
@@ -88,9 +98,17 @@ class _PageHeader extends StatelessWidget {
       const Column(children: <Widget>[Text('Top Repositories')]);
 }
 
+/// A stateless widget that showcases a repository.
+///
+/// This widget displays the most popular branch and commit data for a
+/// repository.
 class RepositoryShowcase extends StatelessWidget {
+  /// Creates a [RepositoryShowcase] widget.
+  ///
+  /// The [data] parameter must not be null.
   const RepositoryShowcase({required this.data, super.key});
 
+  /// The data representing the repository to be showcased.
   final Query$TopRepositories$viewer$topRepositories$nodes data;
 
   @override
@@ -99,6 +117,7 @@ class RepositoryShowcase extends StatelessWidget {
     final Widget? result = data.defaultBranchRef?.target?.maybeWhen<Widget?>(
       commit:
           (
+            // ignore: lines_longer_than_80_chars GraphQL generated way too long of a class name
             final Query$TopRepositories$viewer$topRepositories$nodes$defaultBranchRef$target$$Commit
             commit,
           ) => Card(

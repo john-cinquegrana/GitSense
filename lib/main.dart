@@ -20,7 +20,9 @@ void main() async {
   runApp(const MainApp());
 }
 
+/// The top level app shown here
 class MainApp extends StatefulWidget {
+  /// Creates the whole app
   const MainApp({super.key});
 
   @override
@@ -104,17 +106,28 @@ class _MainAppState extends State<MainApp> {
   @override
   void debugFillProperties(final DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty<GraphQLClient>('client', client));
-    properties.add(DiagnosticsProperty<TextTheme>('textTheme', textTheme));
-    properties.add(DiagnosticsProperty<MaterialTheme>('theme', theme));
-    properties.add(DiagnosticsProperty<GoRouter>('router', router));
+    properties
+      ..add(DiagnosticsProperty<GraphQLClient>('client', client))
+      ..add(DiagnosticsProperty<TextTheme>('textTheme', textTheme))
+      ..add(DiagnosticsProperty<MaterialTheme>('theme', theme))
+      ..add(DiagnosticsProperty<GoRouter>('router', router));
   }
 }
 
+/// A widget that provides global providers to its child widget.
+///
+/// This widget is used to wrap the entire application with providers that
+/// are needed globally.
 class GlobalProviders extends StatefulWidget {
+  /// Creates a [GlobalProviders] widget.
+  ///
+  /// The [child] and [client] parameters must not be null.
   const GlobalProviders({required this.child, required this.client, super.key});
 
+  /// The child widget that will have access to the global providers.
   final Widget child;
+
+  /// The GraphQL client used for making GraphQL requests.
   final GraphQLClient client;
 
   @override
@@ -133,7 +146,7 @@ class _GlobalProvidersState extends State<GlobalProviders> {
   @override
   void initState() {
     super.initState();
-    _clientNotifier = ValueNotifier(widget.client);
+    _clientNotifier = ValueNotifier<GraphQLClient>(widget.client);
   }
 
   @override
@@ -150,12 +163,17 @@ class _GlobalProvidersState extends State<GlobalProviders> {
   );
 }
 
+/// A ChangeNotifier that manages the theme brightness (light or dark).
 class ThemeNotifier extends ChangeNotifier {
+  /// Creates a ThemeNotifier with the given initial brightness.
   ThemeNotifier(this._brightness);
+
   Brightness _brightness;
 
+  /// Gets the current brightness.
   Brightness get brightness => _brightness;
 
+  /// Toggles the brightness between light and dark.
   void toggleBrightness() {
     if (_brightness == Brightness.light) {
       _brightness = Brightness.dark;
@@ -165,15 +183,21 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the brightness to the given value.
+  ///
+  /// [brightness] The new brightness value.
   void setBrightness(final Brightness brightness) {
     _brightness = brightness;
     notifyListeners();
   }
 }
 
+/// A StatefulWidget that provides a theme to its child widget.
 class ThemeProvider extends StatefulWidget {
+  /// Creates a ThemeProvider with the given child widget.
   const ThemeProvider({required this.child, super.key});
 
+  /// The child shown below this widget
   final Widget child;
 
   @override
