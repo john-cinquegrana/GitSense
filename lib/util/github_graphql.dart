@@ -9,7 +9,7 @@ GraphQLClient connectToGithub() {
   final HttpLink httpLink = HttpLink(
     'https://api.github.com/graphql',
     // The authorization token, try not to share this
-    defaultHeaders: {'Authorization': 'Bearer $token'},
+    defaultHeaders: <String, String>{'Authorization': 'Bearer $token'},
   );
 
   return GraphQLClient(link: httpLink, cache: GraphQLCache(store: HiveStore()));

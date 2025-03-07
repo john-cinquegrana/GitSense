@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const String readRepositories = r"""
+const String readRepositories = '''
 query Viewer {
     viewer {
         topRepositories(first: 5, orderBy: { field: NAME, direction: ASC }) {
@@ -32,14 +32,14 @@ query Viewer {
         }
     }
 }
-""";
+''';
 
 class CommitCount extends StatelessWidget {
   const CommitCount({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Placeholder();
+  Widget build(final BuildContext context) {
+    return const Placeholder();
     // return Query(options: options, builder: builder);
   }
 }

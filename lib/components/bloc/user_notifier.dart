@@ -9,7 +9,7 @@ class User {
   final String email;
   final String? name;
 
-  bool equals(User? other) {
+  bool equals(final User? other) {
     if (identical(this, other)) return true;
 
     // We don't need to check this one since we know they're not identical
@@ -26,7 +26,7 @@ class UserNotifier extends ChangeNotifier {
 
   bool get hasUser => _user != null;
 
-  void setUser(User? user) {
+  void setUser(final User? user) {
     // Compare the users and only update if they are different
     if (_user != null && _user!.equals(user)) {
       return;

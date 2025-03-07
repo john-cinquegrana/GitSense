@@ -1,20 +1,22 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:gitsense/pages/landing.dart';
 import 'package:gitsense/pages/login.dart';
 import 'package:gitsense/pages/top_repository_showcase.dart';
 import 'package:gitsense/theme.dart';
 import 'package:gitsense/util/github_graphql.dart';
-import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:gitsense/util/logging.dart';
 import 'package:go_router/go_router.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:nested/nested.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   logger.i('Running main function');
   await initHiveForFlutter();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load();
   runApp(const MainApp());
 }
 
@@ -39,48 +41,73 @@ class _MainAppState extends State<MainApp> {
     client = connectToGithub();
 
     // Use with Google Fonts package to use downloadable fonts
-    textTheme = createTextTheme(context, "Lora", "Ubuntu");
+    textTheme = createTextTheme(context, 'Lora', 'Ubuntu');
 
     theme = MaterialTheme(textTheme);
 
     // Create the router for the pages we will want
     router = GoRouter(
       initialLocation: '/login',
-      routes: [
-        GoRoute(path: '/', builder: (context, state) => LandingPage()),
-        GoRoute(path: '/login', builder: (context, state) => LoginPage()),
+      routes: <RouteBase>[
+        GoRoute(
+          path: '/',
+          builder:
+              (final BuildContext context, final GoRouterState state) =>
+                  const LandingPage(),
+        ),
+        GoRoute(
+          path: '/login',
+          builder:
+              (final BuildContext context, final GoRouterState state) =>
+                  const LoginPage(),
+        ),
         GoRoute(
           path: '/toprepos',
-          builder: (context, state) => TopRepositoryPage(),
+          builder:
+              (final BuildContext context, final GoRouterState state) =>
+                  const TopRepositoryPage(),
         ),
       ],
     );
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     // Log out that we're starting
-    logger.i("Starting up GitSense");
+    logger.i('Starting up GitSense');
 
     return ThemeProvider(
       child: Consumer<ThemeNotifier>(
-        builder: (context, notifier, widget) {
+        builder: (
+          final BuildContext context,
+          final ThemeNotifier notifier,
+          final Widget? widget,
+        ) {
           // Pull the brightness out of the consumer
-          final brightness = notifier._brightness;
+          final Brightness brightness = notifier._brightness;
           // Get the theme to show off in our cool app
-          final currentTheme =
+          final ThemeData currentTheme =
               brightness == Brightness.light ? theme.light() : theme.dark();
           return MaterialApp.router(
             title: 'GitSense',
             theme: currentTheme,
             routerConfig: router,
             builder:
-                (context, child) =>
+                (final BuildContext context, final Widget? child) =>
                     GlobalProviders(client: client, child: child!),
           );
         },
       ),
     );
+  }
+
+  @override
+  void debugFillProperties(final DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<GraphQLClient>('client', client));
+    properties.add(DiagnosticsProperty<TextTheme>('textTheme', textTheme));
+    properties.add(DiagnosticsProperty<MaterialTheme>('theme', theme));
+    properties.add(DiagnosticsProperty<GoRouter>('router', router));
   }
 }
 
@@ -92,6 +119,12 @@ class GlobalProviders extends StatefulWidget {
 
   @override
   State<GlobalProviders> createState() => _GlobalProvidersState();
+
+  @override
+  void debugFillProperties(final DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<GraphQLClient>('client', client));
+  }
 }
 
 class _GlobalProvidersState extends State<GlobalProviders> {
@@ -104,25 +137,22 @@ class _GlobalProvidersState extends State<GlobalProviders> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return GraphQLProvider(
-      client: _clientNotifier,
-      child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider<UserNotifier>(
-            create: (context) => UserNotifier(),
-          ),
-        ],
-        child: widget.child,
-      ),
-    );
-  }
+  Widget build(final BuildContext context) => GraphQLProvider(
+    client: _clientNotifier,
+    child: MultiProvider(
+      providers: <SingleChildWidget>[
+        ChangeNotifierProvider<UserNotifier>(
+          create: (final BuildContext context) => UserNotifier(),
+        ),
+      ],
+      child: widget.child,
+    ),
+  );
 }
 
 class ThemeNotifier extends ChangeNotifier {
-  Brightness _brightness;
-
   ThemeNotifier(this._brightness);
+  Brightness _brightness;
 
   Brightness get brightness => _brightness;
 
@@ -135,7 +165,7 @@ class ThemeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setBrightness(Brightness brightness) {
+  void setBrightness(final Brightness brightness) {
     _brightness = brightness;
     notifyListeners();
   }
@@ -161,12 +191,11 @@ class _ThemeProviderState extends State<ThemeProvider> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeNotifier>(
-      create: (context) => _themeNotifier,
-      child: widget.child,
-    );
-  }
+  Widget build(final BuildContext context) =>
+      ChangeNotifierProvider<ThemeNotifier>(
+        create: (final BuildContext context) => _themeNotifier,
+        child: widget.child,
+      );
 
   @override
   void dispose() {
