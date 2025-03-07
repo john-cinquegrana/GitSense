@@ -49,11 +49,15 @@ class TopRepositoryPage extends StatelessWidget {
           // Create the list of the cute little repo cards
           return ListView.builder(
             itemBuilder: (context, index) {
-              final Query$TopRepositories$viewer$topRepositories$nodes repo =
-                  data[index];
-              return RepositoryShowcase(data: repo);
+              if (index == 0) {
+                return const _PageHeader();
+              } else {
+                final Query$TopRepositories$viewer$topRepositories$nodes repo =
+                    data[index - 1];
+                return RepositoryShowcase(data: repo);
+              }
             },
-            itemCount: data.length,
+            itemCount: data.length + 1,
           );
         },
       ),
@@ -66,7 +70,7 @@ class _PageHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(title: const Text('Top Repositories'));
+    return Column(children: [const Text('Top Repositories')]);
   }
 }
 
