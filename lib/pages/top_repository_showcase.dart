@@ -60,6 +60,15 @@ class TopRepositoryPage extends StatelessWidget {
   }
 }
 
+class _PageHeader extends StatelessWidget {
+  const _PageHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(title: const Text('Top Repositories'));
+  }
+}
+
 class RepositoryShowcase extends StatelessWidget {
   const RepositoryShowcase({required this.data, super.key});
 
