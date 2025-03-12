@@ -179,38 +179,44 @@ class RepositoryShowcase extends StatelessWidget {
           ) => Card(
             margin: const EdgeInsets.symmetric(vertical: 16),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+              padding: const EdgeInsets.all(16),
               child: Column(
+                spacing: 16,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
-                    data.name,
-                    style: Theme.of(context).textTheme.headlineMedium,
-                  ),
-                  const SizedBox(height: 8),
-                  RichText(
-                    text: TextSpan(
-                      children: <InlineSpan>[
-                        TextSpan(
-                          text: commit.authorCount.totalCount.toString(),
-                          style: Theme.of(context).textTheme.titleLarge
-                              ?.copyWith(fontWeight: FontWeight.bold),
-                        ),
-                        TextSpan(
-                          text: ' / ',
+                  Row(
+                    spacing: 18,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        commit.authorCount.totalCount.toString(),
+                        style: Theme.of(context).textTheme.headlineLarge
+                            ?.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8),
+                        child: Text(
+                          '/',
                           style: Theme.of(context).textTheme.titleSmall
                               ?.copyWith(fontWeight: FontWeight.w600),
                         ),
-                        TextSpan(
-                          text: commit.totalCount.totalCount.toString(),
-
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 4),
+                        child: Text(
+                          commit.totalCount.totalCount.toString(),
                           style:
                               Theme.of(
                                 context,
-                              ).textTheme.titleMedium?.copyWith(),
+                              ).textTheme.titleLarge?.copyWith(),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
+                  ),
+
+                  Text(
+                    data.name,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                 ],
               ),
