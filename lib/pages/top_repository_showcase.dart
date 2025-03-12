@@ -6,6 +6,7 @@ import 'package:gitsense/graphql/queries/top_repositories.graphql.dart';
 import 'package:gitsense/util/github_graphql.dart';
 import 'package:gitsense/util/logging.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// A stateless widget that represents the top repository page in the
 /// application.
@@ -213,11 +214,28 @@ class RepositoryShowcase extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   Text(
                     data.name,
                     style: Theme.of(context).textTheme.headlineMedium,
                   ),
+                  TextButton(
+                    // Parse the data into a URI
+                    onPressed: () async {
+                      try {
+                        await launchUrl(Uri.parse(data.url));
+                      } on Exception catch (e, st) {
+                        logger.e(e.toString(), stackTrace: st);
+                      }
+                    },
+                    style: TextButton.styleFrom(padding: EdgeInsets.zero),
+                    child: Text(
+                      data.url,
+                      style: TextStyle(
+                        color: ColorScheme.of(context).onSecondaryContainer,
+                      ),
+                    ),
+                  ),
+                  if (data.description != null) Text(data.description!),
                 ],
               ),
             ),
