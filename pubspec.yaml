@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.2.1
+  flutter_svg: ^2.0.17
   go_router: ^14.8.0
   google_fonts: ^4.0.4
   gql: ^1.0.1-alpha+1730759315362
@@ -30,4 +31,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - ".env"
+    - .env
+    - assets/
