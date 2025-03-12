@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gitsense/components/bloc/user_notifier.dart';
 import 'package:gitsense/graphql/queries/top_repositories.graphql.dart';
 import 'package:gitsense/util/github_graphql.dart';
@@ -24,7 +25,7 @@ class TopRepositoryPage extends StatelessWidget {
       options: Options$Query$TopRepositories(
         variables: Variables$Query$TopRepositories(
           authorId: context.userInfo.user!.id,
-          nRepositories: 3,
+          nRepositories: 10,
         ),
       ),
       builder: (
@@ -73,17 +74,30 @@ class TopRepositoryPage extends StatelessWidget {
                 .toList();
 
         // Create the list of the cute little repo cards
-        return ListView.builder(
-          itemBuilder: (final BuildContext context, final int index) {
-            if (index == 0) {
-              return const _PageHeader();
-            } else {
-              final Query$TopRepositories$viewer$topRepositories$nodes repo =
-                  data[index - 1];
-              return RepositoryShowcase(data: repo);
-            }
-          },
-          itemCount: data.length + 1,
+        final ColorScheme colorScheme = ColorScheme.of(context);
+        return Theme(
+          data: Theme.of(context).copyWith(
+            cardTheme: CardTheme(color: colorScheme.primaryContainer),
+            textTheme: TextTheme.of(context).apply(
+              bodyColor: colorScheme.onPrimaryContainer,
+              displayColor: colorScheme.onPrimaryContainer,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: ListView.builder(
+              itemBuilder: (final BuildContext context, final int index) {
+                if (index == 0) {
+                  return const _PageHeader();
+                } else {
+                  final Query$TopRepositories$viewer$topRepositories$nodes
+                  repo = data[index - 1];
+                  return RepositoryShowcase(data: repo);
+                }
+              },
+              itemCount: data.length + 1,
+            ),
+          ),
         );
       },
     ),
@@ -94,12 +108,49 @@ class _PageHeader extends StatelessWidget {
   const _PageHeader();
 
   @override
-  Widget build(final BuildContext context) => const Column(
-    children: <Widget>[
-      // TODO(jcinquegrana): Flesh out the title
-      Text('Top Repositories'),
-      Text("Ever wonder what it's like?"),
-    ],
+  Widget build(final BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: 20),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 16,
+      children: <Widget>[
+        Text(
+          'Top Repositories',
+          style: TextTheme.of(
+            context,
+          ).displayMedium?.copyWith(color: ColorScheme.of(context).onSurface),
+          textAlign: TextAlign.left,
+        ),
+
+        Row(
+          spacing: 16,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: SvgPicture.asset(
+                'assets/repository.svg',
+                fit: BoxFit.cover,
+                width: 100,
+                colorFilter: ColorFilter.mode(
+                  ColorScheme.of(context).primary,
+                  BlendMode.srcIn,
+                ),
+              ),
+            ),
+            Flexible(
+              child: Text(
+                'Shows off the repositories you have comitted to the most this '
+                'year and compares them to the total amount of commits.',
+                style: TextTheme.of(
+                  context,
+                ).bodyLarge?.copyWith(color: ColorScheme.of(context).onSurface),
+                textAlign: TextAlign.left,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
   );
 }
 
